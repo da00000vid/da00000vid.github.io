@@ -1,0 +1,472 @@
+// JavaScript Document
+$(function(){
+	var $window=$(window);
+
+	/*gotop*/
+	$window.scroll(function() {
+	/*content底加高*/
+    var bottom_ad_h=$('.bottom_ad .ad_mo').outerHeight(true);
+    $('.content').css({'padding-bottom':bottom_ad_h+'px'});
+	/*content底加高ed*/
+
+	 if ($window.scrollTop() > 50) {
+	 if ($window.width() < 768) {
+
+	 $('#back').css({ 'bottom': '40px' });
+	 }else{
+	 $('#back').css({ 'bottom': '0px' });
+	 }
+
+	 $('.bottom_ad').fadeIn();
+
+
+    	 } else {
+	 $('.bottom_ad').fadeOut();
+
+          $('#back').css({ 'bottom': '-80px' });
+       }
+
+    });
+    var $el = $(scrollableElement('html', 'body'));
+    var speed = 550;
+    var $iconTOP = $('#back-img1');
+
+    $($iconTOP).click(function(event) {
+        event.preventDefault();
+        $el.stop().animate({ scrollTop: -50 }, speed);
+    });
+
+
+	// 透過scrollTop檢測可用元素的函數// http://www.learningjquery.com/2007/10/improved-animated-scrolling-script-for-same-page-links#update4
+    function scrollableElement() {
+        var i, len, el, $el, scrollable;
+        for (i = 0, len = arguments.length; i < len; i++) {
+            el = arguments[i];
+            $el = $(el);
+            if ($el.scrollTop() > 0) {
+
+                return el;
+            } else {
+                $el.scrollTop(1);
+                scrollable = $el.scrollTop() > 0;
+                $el.scrollTop(0);
+                if (scrollable) {
+                    return el;
+                }
+            }
+        }
+        return [];
+    }
+ 	/*gotop ed*/
+
+	/*呼叫footer*/
+	$('.footer_arraw .btn1').click(function() {footergo1();});
+	$('.footer_arraw .btn2').click(function() {footergo2();});
+	$('.footer_mask').click(function() {footergo2();});
+
+	function footergo1() {
+		$('.footer_arraw .btn1').hide();
+		$('.footer_mask').show();
+		$('.footer_arraw .btn2').show();
+		$('.footer1').animate({top:'-370px'},300);
+		$('.footer_arraw').css({background: 'url(https://cc.tvbs.com.tw/2017program/health/images/health2020/footer_arraw2.png) no-repeat center 15px',backgroundColor:'#393939'});
+	};
+	function footergo2(){
+		$('.footer_mask').hide();
+		$('.footer_arraw .btn2').hide();
+		$('.footer_arraw .btn1').show();
+		$('.footer1').animate({top:'-5px'},300);
+		$('.footer_arraw').css({background: 'url(https://cc.tvbs.com.tw/2017program/health/images/health2020/footer_arraw.png) no-repeat center 15px',backgroundColor:'#393939'});
+	};
+ 	/*呼叫footer*/
+	/*搜尋頁按鈕*/
+	$('.search_btn li').each(function(i) {
+		$(this).click(function() {
+			$('.search_btn li').removeClass('act');
+			$(this).addClass('act');
+		});
+
+	});
+	/*搜尋頁按鈕 ed*/
+	//GOOGLE搜尋機制開始
+    // gse code start
+    // var cx = '003819153612594031409:w4pflkz0ub9';
+	// var cx = '002254347943719830775:szribwuuile';
+    // var gcse = document.createElement('script');
+    // gcse.type = 'text/javascript';
+    // gcse.async = true;
+    // gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    // var s = document.getElementsByTagName('script')[0];
+    // s.parentNode.insertBefore(gcse, s);
+    // gse code end
+    // $('.search_box .search button').on('click', function(event) {
+	// 	event.preventDefault();
+	// 	$('#gsc-i-id1').val($(this).parent('.search').find('.txt_box').val());
+	// 	$('button.gsc-search-button').click();
+	// 	setTimeout(function(){$('.gsc-adBlock iframe').ready(function(){$('.gsc-adBlock').remove()})},2000);
+	// });
+    //電腦搜尋按下ENTER時
+	// $(".txt_box").on('keyup',function(event) {
+    //     if(event.keyCode==13) {
+    //         $('#gsc-i-id1').val($(this).closest(".txt_box").val());
+    //         $('button.gsc-search-button').click();
+    //         setTimeout(function(){$('.gsc-adBlock iframe').ready(function(){$('.gsc-adBlock').remove()})},2000);
+    //     }
+    // });
+	// // fix header search
+	// $('.search_box .search .button_fix').on('click', function(event) {
+	// 	event.preventDefault();
+	// 	$('#gsc-i-id1').val($(this).parent('.search').find('.txt_box_fix').val());
+	// 	$('button.gsc-search-button').click();
+	// 	setTimeout(function(){$('.gsc-adBlock iframe').ready(function(){$('.gsc-adBlock').remove()})},2000);
+	// });
+	// //電腦搜尋按下ENTER時 fix header
+	// $(".txt_box_fix").on('keyup',function(event) {
+    //     if(event.keyCode==13) {
+    //         $('#gsc-i-id1').val($(this).closest(".txt_box_fix").val());
+    //         $('button.gsc-search-button').click();
+    //         setTimeout(function(){$('.gsc-adBlock iframe').ready(function(){$('.gsc-adBlock').remove()})},2000);
+    //     }
+	// });
+
+	//站內搜尋 start
+	$('.search_box .search button').on('click', function(event) {
+		event.preventDefault();
+		if($(this).attr('class') == 'xx'){
+			$(this).parent('.search').find('.txt_box').val('');
+		}else{
+			var decoded = $(this).parent('.search').find('.txt_box').val();
+			if(decoded.trim() != ''){
+				window.location.href = '/program/search_articles/'+decoded.trim(); // 跳轉
+			}
+
+		}
+		// $('#gsc-i-id1').val($(this).parent('.search').find('.txt_box').val());
+		// $('button.gsc-search-button').click();
+		// setTimeout(function(){$('.gsc-adBlock iframe').ready(function(){$('.gsc-adBlock').remove()})},2000);
+	});
+
+	// 電腦搜尋按下ENTER時
+	$(".txt_box").on('keyup',function(event) {
+        if(event.keyCode==13) {
+			var decoded = $(this).closest(".txt_box").val();
+			if(decoded.trim() != ''){
+				window.location.href = '/program/search_articles/'+decoded.trim(); // 跳轉
+			}
+            // $('#gsc-i-id1').val($(this).closest(".txt_box").val());
+            // $('button.gsc-search-button').click();
+            // setTimeout(function(){$('.gsc-adBlock iframe').ready(function(){$('.gsc-adBlock').remove()})},2000);
+        }
+    });
+	// fix header search
+	$('.header_fix .padding_lr').on('click', '.search_box .search .button_fix', function(event) {
+		event.preventDefault();
+		if($(this).attr('class') == 'xx'){
+			$(this).parent('.search').find('.txt_box_fix').val('');
+		}else{
+			var decoded = $(this).parent('.search').find('.txt_box_fix').val();
+			if(decoded.trim() != ''){
+				window.location.href = '/program/search_articles/'+decoded.trim(); // 跳轉
+			}
+		}
+		// $('#gsc-i-id1').val($(this).parent('.search').find('.txt_box_fix').val());
+		// $('button.gsc-search-button').click();
+		// setTimeout(function(){$('.gsc-adBlock iframe').ready(function(){$('.gsc-adBlock').remove()})},2000);
+	});
+	//電腦搜尋按下ENTER時 fix header
+	$('.header_fix .padding_lr').on('keyup', '.txt_box_fix', function(event) {
+        if(event.keyCode==13) {
+			var decoded = $(this).closest(".txt_box").val();
+			if(decoded.trim() != ''){
+				window.location.href = '/program/search_articles/'+decoded.trim(); // 跳轉
+			}
+            // $('#gsc-i-id1').val($(this).closest(".txt_box_fix").val());
+            // $('button.gsc-search-button').click();
+            // setTimeout(function(){$('.gsc-adBlock iframe').ready(function(){$('.gsc-adBlock').remove()})},2000);
+        }
+	});
+
+	//站內搜尋 end
+
+	/*--所有頁面共用--*/
+	/*--header_fix --*/
+	var $logo_c=$('.header').find('.logo_bar').clone(),
+		$header_c=$('.header').find('.menu_bar').clone(),
+		$menu_bar_top=$('.menu_bar').offset().top,
+		$header_top=$('.header').offset().top;
+	$('.header_fix .padding_lr').append($logo_c);
+	$('.header_fix .padding_lr').append($header_c);
+	// 置頂header的txt_box加上class:txt_box_fix
+	$('.header_fix .txt_box').addClass('txt_box_fix');
+	// 置頂header的search button加上class:button_fix
+	$('.header_fix button').addClass('button_fix');
+
+	$(window).scroll(function() {
+		if($(window).width()>768){
+			if($(window).scrollTop()>$header_top) {
+				$('.header_fix').show();
+			}else{
+				$('.header_fix').hide();
+			};
+		}else{
+			if($(window).scrollTop()>$header_top) {
+				$('.header_fix').show();
+			}else{
+				$('.header_fix').hide();
+			};
+		};
+	});
+	/*--header_fix ed--*/
+	/*!--呼叫漢堡--*/
+	$('.burger_open').click(function() {
+		$('body').css({ 'overflow-y': 'hidden' });
+		$('.burger_box').css({ 'z-index': '999999' });
+		$('.burger_box').css({ 'overflow-y': 'auto' });
+		$('.burger_box').fadeIn(200);
+	});
+	$('.burger_box .xx').click(function() {
+		$('body').css({ 'overflow-y': 'auto' });
+		$('.burger_box').css({ 'overflow-y': 'hidden' });
+		$('.burger_box').fadeOut(200);
+	});
+	/*!--呼叫漢堡ed--*/
+	/*--copy到漢堡--*/
+	/*--社群--*/
+	var $community_c=$('#community1').clone();
+	$('.burger_community').append($community_c);
+	/*--社群ed--*/
+	/*--menu--*/
+	var $menu_bar_c=$('.header').find('.menu_bar').clone();
+	$('.burger_menu').append($menu_bar_c);
+	/*--menu ed--*/
+	/*--copy到漢堡ed--*/
+	/*--art_like--*/
+	$('.art_like .btn').each(function(i) {
+		$(this).find('li').click(function() {
+			$('.art_like .btn').eq(i).find('li').removeClass('act');
+			$(this).addClass('act');
+		});
+	});
+	/*--art_like ed--*/
+	/*--按鈕反映ed--*/
+	/*--彈出加入會員--*/
+	$('.member_btn').click(function() {
+		$('.join_box').slideDown();
+		$('.favorite_box').fadeOut(200);
+	});
+	$('.join_box .xx').click(function() {
+		$('.join_box').slideUp();
+	});
+	/*--彈出加入會員ed--*/
+	// $('.content .con_box').each(function() {
+	// 	var $body_c=$(this).find('.r_art_body').clone();
+	// 	$(this).find('.art_body').append($body_c);
+	// });
+	/*--所有頁面共用 ed--*/
+	/*--已存連結彈出--*/
+	$('.fav_btn2').click(function() {
+    	$('.favorite_box2').fadeIn(200).delay(4000).fadeOut(200);
+    	$('.favorite_box').hide();
+    	$('.join_box').slideUp();
+	});
+	$('.favorite_box2').click(function() {
+    	$(this).fadeOut(200);
+	});
+	/*--已存連結彈出ed--*/
+	if (checkDetail()) {
+		/*--內頁轉換分享按鈕fix--*/
+	    $(window).resize(function() {
+	        $(window).scroll(function() {
+	            if($(window).width()<768) {
+	                $('.header_fix .menu_btn_mo').hide();
+	                $('.header_fix .community_mo').show();
+	                $('.header_fix .logo').hide();
+	            } else {
+	                $('.header_fix .menu_btn_mo').hide();
+	                $('.header_fix .community_mo').hide();
+	                $('.header_fix .logo').css({display:'inline-block'});
+	            }
+	        });
+
+	    });
+	    $(window).scroll(function() {
+	        if ($(window).width()<768) {
+	            $('.header_fix .menu_btn_mo').hide();
+	            $('.header_fix .community_mo').show();
+	            $('.header_fix .logo').hide();
+	        } else {
+	            $('.header_fix .menu_btn_mo').hide();
+	            $('.header_fix .community_mo').hide();
+	            $('.header_fix .logo').css({display:'inline-block'});
+	        }
+	    });
+	}
+
+	/* youtube responsive */
+	$('iframe[src*="youtube.com"]').wrap('<div class="youtubecontent" />');
+	/* youtube responsive ed*/
+	/* set menu class */
+	setMenuClass();
+});
+
+function redirectToFBM(){
+	var link = window.location.href;
+	if(detectmob()){
+		window.open("fb-messenger://share/?link=" + encodeURIComponent(link) + "&app_id=363996840650165");
+	} else {
+		var protocol = location.protocol;
+		var slashes = protocol.concat("//");
+		var host = slashes.concat(window.location.hostname);
+		window.open("http://www.facebook.com/dialog/send?app_id=363996840650165&link=" + encodeURIComponent(link) + "&redirect_uri=" + encodeURIComponent(host));
+	}
+}
+function shareToLine() {
+	if(detectmob()){
+		// window.open("line://msg/text/${encodeURIComponent(text)}", "_blank");
+		// window.open("line://msg/text/" + encodeURIComponent(document.title) + " " + encodeURIComponent(location.href), "_blank");
+		window.open("http://line.naver.jp/R/msg/text/?" + encodeURIComponent(document.title) + "%0D%0A" + encodeURIComponent(location.href));
+	} else {
+		window.open("https://lineit.line.me/share/ui?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}");
+	}
+}
+function shareToFB() {
+	var fbhtml_url=window.location.href;
+	window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(fbhtml_url) , '', 'toolbar=no,scrollbars=yes,resizable=no,fullscreen=no,top=50,left=50,width=555,height=615').opener = null;
+}
+function searchTag(id, keyword) {
+	// event.preventDefault();
+	// var decoded = $('<div/>').html(decodeURIComponent(keyword)).text().replace(/\+/g, ' ');
+	var decoded = decodeURI(keyword);
+	// $('#gsc-i-id1').val(decoded);
+	// $('button.gsc-search-button').click();
+	// console.log(location.hostname+"/program/search_tag_result/"+decoded);
+	$.post('/api/recordProgramViewsCount', { programid: id, tbl: 'keyword', keyword: keyword });
+	window.location.href = '/program/search_tag_result/'+decoded; // 跳轉
+	// setTimeout(function(){$('.gsc-adBlock iframe').ready(function(){$('.gsc-adBlock').remove()})},2000);
+}
+function setMenuClass() {
+	var urlCatStr = window.location.href.split('/')[3];
+
+	$('.menu_bar').find('li').removeClass('act');
+	$('.menu_bar li').each(function(i) {
+		if ($(this).attr('data-ref')==urlCatStr) {
+			$(this).addClass('act');
+		}
+	});
+}
+function checkDetail() {
+	var urlPath = window.location.pathname;
+	var urlArray = new Array();
+	var urlArray = urlPath.split("/");
+	if (urlArray[2] && !isNaN(urlArray[2])) {
+		return true;
+	} else {
+		return false;
+    }
+
+}
+function newCopy(){
+    var text = location.href;
+    if(text.indexOf("from=articleshare") == -1) {
+        text += "?from=articleshare";
+    }
+    $("#copy_url").val(text);//安卓
+    if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) {
+        var el = document.createElement('input');
+        el.value = $("#copy_url").val();//要复制的内容
+        el.style.opacity = '0';
+        document.body.appendChild(el);
+        var editable = el.contentEditable;
+        var readOnly = el.readOnly;
+        el.contentEditable = true;
+        el.readOnly = false;
+        const range = document.createRange();
+        range.selectNodeContents(el);
+        var sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+        el.setSelectionRange(0, 999999);
+        el.contentEditable = editable;
+        el.readOnly = readOnly;
+        var ret = document.execCommand('copy');
+        el.blur();
+        if(ret){
+            // alert("成功");
+            $('.favorite_box2').fadeIn(200).delay(4000).fadeOut(200);
+            $('.favorite_box').hide();
+            $('.join_box').slideUp();
+        }
+        // else{
+        //     alert("失败");
+        // }
+    }else{
+		// var Url2=document.getElementById("copy_url");
+        var el = document.createElement('input');
+        el.value = $("#copy_url").val();
+        document.body.appendChild(el);
+        el.select();
+        var ret = document.execCommand('copy');
+        if(ret){
+            $('.favorite_box2').fadeIn(200).delay(4000).fadeOut(200);
+            $('.favorite_box').hide();
+            $('.join_box').slideUp();
+        }
+        // var Url2=document.getElementById("copy_url");
+        // if(document.execCommand('copy', false, null)){
+        // var successful = document.execCommand('copy');
+        //     $('.favorite_box2').fadeIn(200).delay(4000).fadeOut(200);
+        //     $('.favorite_box').hide();
+        //     $('.join_box').slideUp();
+        // }
+    }
+	document.body.removeChild(el);
+}
+window.Clipboard = (function(window, document, navigator) {
+	var textArea,
+		copy;
+
+	function isOS() {
+		return navigator.userAgent.match(/ipad|iphone/i);
+	}
+
+	function createTextArea(text) {
+		textArea = document.createElement('textArea');
+		textArea.value = text;
+		document.body.appendChild(textArea);
+	}
+
+	function selectText() {
+		var range,
+			selection;
+
+		if (isOS()) {
+			range = document.createRange();
+			range.selectNodeContents(textArea);
+			selection = window.getSelection();
+			selection.removeAllRanges();
+			selection.addRange(range);
+			textArea.setSelectionRange(0, 999999);
+		} else {
+			textArea.select();
+		}
+	}
+
+	function copyToClipboard() {
+		document.execCommand('copy');
+		document.body.removeChild(textArea);
+	}
+
+	copy = function(text) {
+		if(text.indexOf("from=articleshare") == -1) {
+			text += "?from=articleshare";
+		}
+		createTextArea(text);
+		selectText();
+		copyToClipboard();
+		// alert("網址已複製到剪貼簿");
+ 	};
+
+	return {
+		copy: copy
+	};
+})(window, document, navigator);

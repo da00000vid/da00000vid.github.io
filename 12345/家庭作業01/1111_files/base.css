@@ -1,0 +1,1524 @@
+@charset "utf-8";
+/* CSS Document */
+/* @font-face {
+  font-family: 'DFT_N5U';
+  src: url('../fonts/DFLiSong-W7-WIN-BF-01.woff') format('woff');
+} */
+html,body {
+-webkit-tap-highlight-color: rgba(0,0,0,0);
+position:relative;
+margin:0;padding:0;outline:none;
+font-family: 微軟儷黑體, 微軟正黑體, Arial, Helvetica, Verdana, \5FAE\8EDF\6B63\9ED1\9AD4, sans-serif, 微軟儷黑體, 微軟正黑體, Arial, Helvetica, Myriad Pro, Microsoft, bauerbodonistd-roman, Century Gothic,"Asap",Futura,"Lucida Grande", Geneva, Helvetica, "sourcehansans-tc-normal","sans-serif",Tahoma;background-color:#fff;
+
+}
+html::-webkit-scrollbar {
+width:10px;
+}
+html::-webkit-scrollbar-track {
+-webkit-border-radius: 10px;
+border-radius: 10px;
+margin:80px 0 5px 0;
+}
+html::-webkit-scrollbar-thumb {
+-webkit-border-radius: 4px;
+border-radius: 4px;
+background: #209c98;
+}
+p,ul,li{margin:0;padding:0;list-style:none;}
+a:link,a:visited,a:active {color: #000;text-decoration: none;}
+a:hover {text-decoration:none;transition:0.3s; }
+img{width:100%; border:0;}
+
+.img{position:relative;line-height:0;}.img img{width:100%;}
+
+a:hover .img_mask{background-color:#209c98;}
+.img_mask{position: absolute;width:100%;height:100%;background-color: rgba(0,0,0,0);z-index:1;transition:0.3s;}
+.img_mask:hover{background-color: rgba(0,0,0,0.3);}
+.txt{word-break: break-word;}
+input::-ms-clear { display: none; }
+
+/*去除input默認樣式*/
+textarea,
+text,
+select,
+input{
+-webkit-appearance: none;
+-moz-appearance: none;
+-o-appearance: none;
+appearance: none;
+border:1px #ff9398 solid;
+ }
+/*去除 Chrome focus 時外框*/
+input:focus {
+ outline:0;
+}
+textarea:focus {
+ outline:0;
+}
+select:focus {
+ outline:0;
+}
+/* 共用物件 */
+.overflow_v{overflow:visible!important;}
+/*--gotoTop--*/
+#back{
+	text-align: center;
+	position: fixed;
+	z-index:4;
+	right: 0;
+	bottom:0px;;
+	transition:0.5s;
+	display: block;
+	cursor:pointer;
+	padding:25px 10px;
+}
+#back-img1{
+	cursor:pointer;width:40px;height:40px;
+    background:rgba(0,0,0,0.5);
+	border-radius:5px;
+	display: block;A70
+}
+#back-img1 img{width:100%;}
+/*--gotoTop end--*/
+/*--置底--*/
+/*--置底 ed--*/
+/* 文字共用 */
+/* 顯示隱藏 */
+.display_block{display:block!important;}
+.display_none{display:none!important;}
+/* 顯示隱藏ed */
+/*距離*/
+.margin_b0{margin-bottom: 0!important;}
+.padding_b0{padding-bottom: 0!important;}
+.padding_lr{padding:0 15px;}
+
+/*距離ed*/
+
+/* 靠邊 */
+.txt_left{text-align:left;}
+.txt_center{text-align:center;}
+.txt_right{text-align:right;}
+/* 靠邊 ed*/
+/* 文字共用 */
+
+/* 顏色 */
+.bg_color1{background-color:#e9e9e9;}
+.bg_color2{background-color:#fef2dc;}
+.color1{color: #209c98;}
+a .title{transition:0.3s;}
+a .img img{transition:0.3s;}
+a:hover .title{color:#209c98;transition:0.3s;}
+a:hover .img img{transform:scale(1.1);transition:0.3s;}
+/* 顏色ed */
+/* more */
+.more_box{width:100%;text-align:center;}
+.more a{padding:10px 35px;display:inline-block;background-color:#e5e5e5;margin:0 auto;}
+.more a:hover{background-color:#e7bcce;}
+/* more ed*/
+/*標準 btn */
+.button a{
+border-radius: 3px;
+padding: 5px 20px;
+color: #209c98;
+font-size: 16px;
+border: 1px #209c98 solid;
+background-color: #fff;
+}
+.button a:hover,.button.act a{
+color: #fff;
+border: 1px #209c98 solid;
+background-color: #209c98;
+}
+
+/*標準 btn ed*/
+/* play */
+.play{float:left;width:25px;height:25px;background:url(../../images/health2020/play.svg)no-repeat center bottom;background-size:90%;margin-right:0px;}
+@media (max-width:767px) {
+.play{float:left;width:20px;height:20px;background:url(../../images/health2020/play.svg)no-repeat center bottom;background-size:90%;margin-right:0px;}
+}
+@media (max-width:767px) {
+.play{float:left;width:18px;height:18px;background:url(../../images/health2020/play.svg)no-repeat center bottom;background-size:90%;margin-right:0px;}
+}
+/* play */
+/* 廣告欄位 */
+.bottom_ad{display:none;width:100%;position:fixed;bottom:0;z-index:1;overflow:hidden;}
+.bottom_ad .ad_mo{width:100%;margin-bottom:0;background-color:rgba(0,0,0,0);padding:0;}
+.ad,.ad_mo{
+display: block;
+width: 100%;
+height: auto;
+margin: 0 auto 20px;
+text-align: center;
+line-height: 0;
+overflow: hidden;
+}
+.ad_mo{
+display:none;
+}
+.ad_mo .padding{padding:5px 15px;}
+.detail_div .ad,.detail_div .ad_mo {
+margin: 0;padding: 0;background-color: #fff;
+}
+.ad img,.ad_mo img{width:auto; max-width:100%;}
+@media (max-width:767px) {
+.ad{display:none;}
+.ad_mo{display:block;background-color: #f7f7f7;padding:10px 0;}
+}
+ /* 廣告欄位ed */
+.youtubecontent { position: relative; height: 0; overflow: hidden; }
+.youtubecontent { padding-bottom: 56.25%; }
+.youtubecontent iframe,
+.youtubecontent object,
+.youtubecontent embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+/* 共用物件 ed*/
+
+/*網頁架構*/
+
+/* 共用字型 */
+.header .menu_bar li a,.header_fix .menu_bar li a,
+.content .main .center .title_box  .title,.content .main .center .title_box h1,
+.art_title,
+.content .art_like .btn li,
+.content .main .right .popularity .num,
+.burger_box  .menu_bar,.search_page .tagwords_box .title,.art_title_bar li a
+{font-weight: bold;}
+h1.search_txt {
+    font-weight: normal;
+}
+/* 共用字型ed */
+
+/* 共用display:inline-block */
+.header .logo,
+.header .search_box,
+.header .search_box  .list li,
+.header .community  li,.header .menu_bar li,.header_fix .menu_bar li,
+
+.content .main .center,
+.content .main .right,
+.content .main .center .title_box li,
+.content .main .center .community  li,
+.content .tagwords_box .tagwords li,.art_list li,
+.content .art_like .btn li,.r_tagwords .list li,.menu_btn_mo li,
+
+.burger_box .xx,.burger_box .logo,
+.search_btn li,
+
+.index_kv .kv_left,.index_kv .kv_right,.index_kv .kv_right li,
+
+.art_title_bar li,.index_art_list .list li
+{display:inline-block;}
+/* 共用display:inline-blocked */
+
+/* 共用margin-bottom:20px; */
+.content .main .center .community_box,
+.content,.content .con_box,
+.content .main .center .title_box,
+.content .main .center .title_box  .title,
+.content .detail_div,.content .tagwords_box,
+.content .tagwords_box .tagwords,.art_title,
+.content .related,.content .art_like,.content .art_like .btn,
+.content .art_like .btn li,.content .main .right .box,
+
+.art_list li,.art_title_bar,
+.popularity li,
+
+.r_art_list li,.r_tagwords .title,.r_tagwords .txt,.r_tagwords .list,
+
+.line_friend,.line_friend_mo,
+
+.search_page .tagwords_box .title,.search_result .list li,.search_page .tagwords_box .tagwords,.search_txt,
+
+.index_kv,.index_art_list,.index_art_list2,.index_art_list2 .list li,.index_art_list.type2,.hot_art .list li ,.category_kv
+{margin-bottom:20px;}
+
+@media (max-width:1023px) {
+.content .main .center .community_box,
+.content,.content .con_box,
+.content .main .center .title_box,
+.content .main .center .title_box  .title,
+.content .detail_div,.content .tagwords_box,
+.content .tagwords_box .tagwords,.art_title,
+.content .related,.content .art_like,.content .art_like .btn,.content .art_like .btn li,.content .main .right .box,
+
+.art_list li,.art_title_bar,.popularity li,
+
+.r_art_list li,.r_tagwords .title,.r_tagwords .txt,.r_tagwords .list,
+
+.line_friend,.line_friend_mo,
+
+.search_page .tagwords_box .title,.search_result .list li,.search_page .tagwords_box .tagwords,.search_txt,
+
+.index_kv,.index_art_list,.index_art_list2,.index_art_list2 .list li,.index_art_list.type2,.hot_art .list li ,.category_kv
+{margin-bottom:15px;}
+
+}
+/* 共用margin-bottom:20px;ed */
+.hidden{width:100%;overflow:hidden;}
+/* 共用overflow:hidden; */
+.img,.txt,.txt2,.title,
+.header .logo_bar,.header .search_box  .search,.header .community  li,.header .search_box  .list,
+.content .detail_div,.content .detail_img,
+.art_list,.art_list .img,.art_list .txt,
+.popularity .txt,.popularity li,
+.r_art_list li,.r_art_list .img,.r_art_list .txt_box,.r_art_list .txt,.r_art_list .title,.r_art_list .txt2,.r_tagwords .btn,
+
+.search_page .tagwords_box .tagwords li a,.search_result .list .img,.search_result .list .txt,.search_result .list .time,.search_result .list li,
+
+.index_kv,.index_kv .kv_left .title,.index_kv .kv_left .txt,.index_kv .kv_left .img,.index_kv .kv_right .title,.index_kv .kv_right .img,.index_kv .kv_left .txt,
+.index_kv .kv_right_mo,.index_kv .kv_right_mo .img,.index_kv .kv_right_mo .title,.index_art_list,.index_art_list .list .title,.index_art_list .list .img,
+.index_art_list .bg_box,.index_art_list2,.index_art_list2 .list li,.index_art_list2 .bg_box,.hot_art .list li
+
+{overflow:hidden;}
+
+/* 共用overflow:hidden; ed */
+/*共用文章單元抬頭*/
+.art_title{border-bottom: 1px solid #393939;padding-left:20px;padding-bottom:10px;}
+.art_title_bar{border-bottom: 1px solid #393939;padding-bottom:10px;text-align:left;overflow:hidden}
+.art_title_bar li{}
+.art_title_bar li a{}
+.art_title_bar li{margin-right:85px;}
+.art_title_bar li:last-child{margin-right:0px;}
+.art_title_bar li a{border-bottom:7px solid rgba(255,255,255,0);padding: 8px 10px 6px;}
+.art_title_bar li a:hover,.art_title_bar li.act a{border-bottom:5px solid #209c98;color:#209c98;transition:0.3s;}
+@media (max-width:1279px) {
+.art_title_bar li{margin-right:55px;}
+}
+@media (max-width:1023px) {
+.art_title_bar li{margin-right:25px;}
+.art_title_bar li a{border-bottom:7px solid rgba(255,255,255,0);padding: 8px 10px 10px;}
+}
+@media (max-width:767px) {
+.art_title_bar li{margin-right:20px;}
+}
+@media (max-width:411px) {
+.art_title_bar li a{font-size:20px!important;padding: 8px 5px;}
+.art_title_bar li{margin-right:15px;}
+}
+@media (max-width:374px) {
+.art_title_bar li a{font-size:18px!important;padding: 8px 6px;}
+}
+@media (max-width:359px) {
+.art_title_bar li{margin-right:0px;}
+.art_title_bar li a{font-size:18px!important;padding: 8px 5px;}
+}
+@media (min-width: 1023px) and (max-width: 1025px) {
+ .art_title_bar{
+  padding-bottom: 7px;
+ }
+}
+/*共用文章單元抬頭ed*/
+/* 共用字級 */
+.search input {
+    font-family: 微軟儷黑體, 微軟正黑體, Arial, Helvetica, Verdana, \5FAE\8EDF\6B63\9ED1\9AD4, sans-serif, 微軟儷黑體, 微軟正黑體, Arial, Helvetica, Myriad Pro, Microsoft, bauerbodonistd-roman, Century Gothic,"Asap",Futura,"Lucida Grande", Geneva, Helvetica, "sourcehansans-tc-normal","sans-serif",Tahoma;
+}
+.burger_footer,
+.header .search_box  .list li,.header_fix .search_box  .list li,
+.content .tagwords_box .tagwords li a,
+.content .main .center .author_box li,
+.content .tagwords_box .tagwords2,.r_art_list .txt,.r_tagwords .list li a,.content .main .center .title_box  .title_mo{font-size:14px;}
+.header .search_box  .search input,.header_fix .search_box  .search input,.r_tagwords .btn a{font-size:16px;}
+.content .main .center .txt_scale,.content .detail_div p,.r_art_list .title,.r_art_list .txt,
+.footer h2,.join_box .box
+{font-size:18px;}
+.content .detail_div h4,.r_tagwords .title,.burger_box  .menu_bar,.favorite_box .txt,.favorite_box2 .txt,.index_kv .kv_right .title,.index_art_list .list .title{font-size:22px;}
+.content .related .list li,.art_list .txt,.content .detail_div h2,.popularity li,.r_tagwords .txt,.search_result .list .txt,.index_kv .kv_left .txt{font-size:20px;}
+.menu_bar li a,.content .detail_div h2,
+.content .art_like .btn li ,
+.art_title,.art_title_bar,.index_kv .kv_left .title
+{font-size:24px;}
+
+.content .main .center .title_box  .title{font-size:30px;line-height:35px;}
+
+@media (max-width:1023px) {
+.content .detail_div h4,.r_tagwords .title,.art_title{font-size:22px;}
+.content .related .list li,.art_list .txt,.content .detail_div h3,.popularity li,.r_tagwords .txt{font-size:20px;}
+.menu_bar li a,.content .detail_div h2,.art_title_bar li a
+{font-size:20px;}
+.content .main .center .title_box  .title{font-size:24px;line-height:32px;}
+}
+@media (max-width:767px) {
+.art_title,.art_title_bar{font-size:20px;}
+}
+@media (max-width:359px) {
+.content .main .center .title_box  .title{font-size:22px;line-height:24px;}
+
+}
+
+
+/*文章標題字級*/
+.content .detail_div h4, .r_tagwords .title, .burger_box .menu_bar, .favorite_box .txt,
+.favorite_box2 .txt, .index_kv .kv_right .title, .index_art_list .list .title{font-size:21px;}
+
+/*文章敘述字級*/
+.content .related .list li, .art_list .txt, .content .detail_div h2, .popularity li, .r_tagwords .txt,
+.search_result .list .txt, .index_kv .kv_left .txt{font-size:19px;}
+
+
+/*熱門文章所屬的inbox,增加新的class,拉開間距*/
+.box_hot{margin-top:10px!important;}
+
+/* 共用字級 ed*/
+
+.container{}
+.inbox{width:1280px;margin:0 auto;overflow:hidden;position:relative;}
+@media (max-width:1279px) {.inbox{width:1024px;}}
+@media (max-width:1023px) {.inbox{width:768px;}}
+@media (max-width:767px) {.inbox{width:414px;}}
+@media (max-width:414px) {.inbox{width:100%;}}
+/*漢堡*/
+.burger_box{display:none;background-color:#fff;width:100%;height:100vh;position:fixed;z-index:5;padding:10px 0 ;overflow:hidden;}
+
+.burger_box .logo_bar{margin-bottom:30px;}
+.burger_box .logo{width:114px;margin-right:30px;vertical-align:top;}
+.burger_box .xx{float:right;width:20px;margin-top:10px;}
+
+.burger_menu{}
+.burger_menu .menu_bar li{width:150px;margin:0 auto 20px;text-align:center;letter-spacing:1px;}
+
+.burger_menu .menu_bar li a{font-size:22px;display:block!important;border-bottom:4px solid rgba(255,255,255,0);padding: 8px 10px;overflow:hidden;}
+.burger_menu .menu_bar li a:hover,.burger_box  .menu_bar li.act a{border-bottom:4px solid #209c98;color:#209c98;transition:0.3s;}
+.burger_menu .menu_bar .red {color: #ff6f5e;}
+.burger_footer{display:block;text-align:center;line-height:24px;margin-bottom:50px;}
+.burger_community{}
+.burger_logo{width:85px;margin-bottom:15px;margin:0 auto;}
+.burger_txt{margin-bottom:15px;}
+.burger_copyright{color:#9f9f9f;}
+.burger_community{margin-bottom:15px;}
+.burger_community   li{width:35px;height:35px;background-size:100%;margin-right:5px;display:inline-block;}
+.burger_community   li a{display:block;width:100%;height:100%;}
+.burger_community   li:last-child{margin-right:0px;display:none;}
+.burger_community   li:nth-child(1){background:url(../../images/health2020/header_community01.svg)no-repeat center center;}
+.burger_community   li:nth-child(2){background:url(../../images/health2020/header_community02.svg)no-repeat center center;}
+.burger_community   li:nth-child(3){background:url(../../images/health2020/header_community03.svg)no-repeat center center;}
+/*漢堡ed*/
+
+/*會員登入*/
+.join_box{display:none;width:100%;position:fixed;z-index:2;top:25%;}
+.join_box .box{border-radius:3px;text-align:center;position:relative;background-color:#fff;width:430px;margin:0 auto;padding:35px 10px  20px;border:1px solid #209c98; box-shadow:0 0 10px rgba(0,0,0,0.2);}
+.join_box .img{width:150px;margin:0 auto 15px;}
+.join_box .xx{position:absolute;right:10px;top:10px;width:20px;cursor:pointer;}
+.join_box .txt{line-height:24px;margin-bottom:15px;}
+.join_box .btn{padding:5px 10px;background-color:#209c98;margin:0 auto;width:max-content;border-radius:3px;color:#fff;cursor:pointer;}
+@media (max-width:414px) {
+.join_box .box{width:85%;}
+}
+/*會員登入ed*/
+/*收藏pop*/
+.favorite_box2{}
+.favorite_box,.favorite_box2{display:none;width:100%;position:fixed;z-index:1;top:35%;}
+.favorite_box .box,.favorite_box2 .box{border-radius:10px;text-align:center;position:relative;background-color:rgba(0,0,0,0.7);width:200px;margin:0 auto;padding:35px 10px  20px;box-shadow:0 0 10px rgba(0,0,0,0.2);}
+.favorite_box .txt,.favorite_box2 .txt{line-height:24px;margin-bottom:15px;color:#fff;}
+.favorite_box .img,.favorite_box2 .img{margin:0 auto 20px;border-radius:120px;width:50px;height:50px;background:url(../../images/health2020/content_community05.svg)no-repeat center center;background-color: #209c98;background-size:90%;}
+.favorite_box2 .img{background:url(../../images/health2020/content_community04.svg)no-repeat center center;background-color: #209c98;background-size:90%;}
+
+@media (max-width:767px) {
+.favorite_box,.favorite_box2{display:none;width:100%;position:fixed;z-index:1;top:20%;}
+}
+/*收藏pop ed*/
+
+
+
+/*header*/
+/*header_fix*/
+.header_fix{display:none;padding:20px 0 0;width:100%;position:fixed;z-index:2;box-shadow:0px 1px 4px rgba(0,0,0,0.2); top:0;background-color:#fff;}
+.header_fix .inbox{overflow:visible; }
+.header_fix .menu_bar{border-bottom:0px solid #393939;}
+.header_fix .search_box{}
+.header_fix .logo_bar{width:100%;}
+.header_fix .menu_bar{border-bottom:0px solid #393939;padding-bottom:12px;}
+.header_fix .menu_bar .red{color:#ff6f5e;}
+.header_fix .menu_bar li{margin-right:85px;}
+.header_fix .menu_bar li:last-child{margin-right:0px;}
+.header_fix .menu_bar li a{border-bottom:6px solid rgba(255,255,255,0);padding: 8px 10px;}
+.header_fix .menu_bar li a:hover,.header_fix .menu_bar li.act a{border-bottom:5px solid #209c98;color:#209c98;transition:0.3s;}
+
+.header_fix .community_mo{display:none;}
+.header_fix .community_mo .back{float:left;width:35px;height:35px;background:url(../../images/health2020/menu_btn_mo4.svg)no-repeat center center;background-color: #393939;background-size:75%;border-radius:60px;}
+.header_fix .community_mo .back a{display:block;width:100%;height:100%;}
+.header_fix .community_mo .community{float:right;padding-bottom:5px;}
+.header_fix .community_mo .community  li{display:inline-block;width:35px;height:35px;margin-right:5px;position:relative;border-radius:60px;}
+.header_fix .community_mo .community  li .pop{display:none;width:100px;position:absolute; top:30px;right:-15px;background:url(../../images/health2020/pop.png)no-repeat center center;text-align:center;padding:15px ;}
+.header_fix .community_mo .community  li .pop p{padding-top:5px;font-size:18px;color: #209c98;}
+.header_fix .community_mo .community  li a{display:block;width:100%;height:100%;}
+.header_fix .community_mo .community  li:last-child{margin-right:0px;}
+.header_fix .community_mo .community  li:nth-child(1){background:url(../../images/health2020/content_community01.svg)no-repeat center center;background-color: #3bc115;}
+.header_fix .community_mo .community  li:nth-child(2){background:url(../../images/health2020/content_community02.svg)no-repeat center center;background-color: #3b5998;}
+.header_fix .community_mo .community  li:nth-child(3){background:url(../../images/health2020/content_community03.svg)no-repeat center center;background-color: #0a90fe;}
+.header_fix .community_mo .community  li:nth-child(4){background:url(../../images/health2020/content_community04.svg)no-repeat center center;background-color: #959595;}
+.header_fix .community_mo .community  li:nth-child(5){background:url(../../images/health2020/content_community05.svg)no-repeat center center;background-color: #209c98;}
+
+@media (max-width:359px) {
+.header_fix .community_mo .community  li,.header_fix .community_mo .back{width:30px;height:30px;margin-right:5px;}
+}
+/*header_fix ed*/
+
+.header{padding:20px 0;background-color:#fff;}
+.header .community_mo,.header_fix .community_mo{display:none;}
+.header .logo,.header_fix .logo{width:170px;margin-right:30px;vertical-align:top;display:inline-block;}
+.header .logo_bar,.header_fix .logo_bar{margin-bottom:30px;overflow:hidden;}
+.header .search_box,.header_fix .search_box{width:530px;display:inline-block;}
+.header .search_box  .search,.header_fix .search_box  .search{width:100%;margin-bottom:10px;border-radius:5px;background-color: #e5e5e5;line-height:0;overflow:hidden;}
+.header .search_box  .search input,.header_fix .search_box  .search input{float:left;width:88%;border:none;margin-top:8px;margin-left:8px;background-color: #e5e5e5;color: #393939;}
+.header .community_box,.header_fix .community_box{float:right;clear:both;}
+.header .community  li,.header_fix .community  li{width:35px;height:35px;background-size:100%;margin-right:5px;display:inline-block;}
+.header .community  li a,.header_fix .community  li a{display:block;width:100%;height:100%;}
+.header .community  li:last-child,.header_fix .community  li:last-child{margin-right:0px;}
+.header .community  li:nth-child(1),.header_fix .community  li:nth-child(1){background:url(../../images/health2020/header_community01.svg)no-repeat center center;}
+.header .community  li:nth-child(2),.header_fix .community  li:nth-child(2){background:url(../../images/health2020/header_community02.svg)no-repeat center center;}
+.header .community  li:nth-child(3),.header_fix .community  li:nth-child(3){background:url(../../images/health2020/header_community03.svg)no-repeat center center;}
+.header .community  li:nth-child(4),.header_fix .community  li:nth-child(4){background:url(../../images/health2020/header_community04.svg)no-repeat center center;}
+.header .search_box  .search button,
+.header_fix .search_box  .search button
+{
+width:38px;height:38px;border:none;background-color: #209c98;float:right;
+background:url(../../images/health2020/search_btn.svg)no-repeat center center;background-size:50%;
+background-color: #209c98;cursor:pointer;
+}
+.header .search_box  .list,.header_fix .search_box  .list{overflow:hidden;height:20px;}
+.header .search_box  .list li,.header_fix .search_box  .list li{color: #454545;border-right:#e3e3e3 1px solid;padding-right:10px;margin-right:10px;display:inline-block;}
+.header .search_box  .list li:last-child,.header_fix .search_box  .list li:last-child{border-right:#e3e3e3 0px solid;padding-right:0px;margin-right:10px;}
+.header .search_box  .list li a,.header_fix .search_box  .list li a{color: #454545;}
+.header .search_box  .list li a:hover,.header_fix .search_box  .list li a:hover{color: #209c98;}
+
+.header .menu_bar,.header_fix .menu_bar{border-bottom:1px solid #393939;padding-bottom:12px;overflow:hidden;}
+.header_fix .menu_bar{border-bottom:0px solid #fff;}
+.header .menu_bar .red,.header_fix .menu_bar .red{color:#ff6f5e;}
+.header .menu_bar li,.header_fix .menu_bar li{margin-right:85px;}
+.header .menu_bar li:last-child,.header_fix .menu_bar li:last-child{margin-right:0px;}
+.header .menu_bar li a,.header_fix .menu_bar li a{border-bottom:7px solid rgba(255,255,255,0);padding: 8px 10px;}
+.header .menu_bar li a:hover,.header .menu_bar li.act a,
+.header_fix .menu_bar li a:hover,.header_fix .menu_bar li.act a
+{border-bottom:4px solid #209c98;color:#209c98;transition:0.3s;}
+
+.menu_btn_mo{float:right;display:none;}
+.menu_btn_mo li{width:20px;height:20px;margin:10px;margin-top:10px;}
+.menu_btn_mo li a{width:100%;height:100%;display:block;}
+.menu_btn_mo li:nth-child(1){background:url(../../images/health2020/menu_btn_mo1.svg)no-repeat center center;}
+.menu_btn_mo  li:nth-child(2){background:url(../../images/health2020/menu_btn_mo2.svg)no-repeat center center;}
+.menu_btn_mo  li:nth-child(3){background:url(../../images/health2020/menu_btn_mo3.svg)no-repeat center center;}
+.menu_btn_mo li:last-child{margin-right:0;}
+/*header ed*/
+
+@media (max-width:1279px) {
+.header .menu_bar li,.header_fix .menu_bar li{margin-right:55px;}
+}
+@media (max-width:1024px) {
+.header_fix .menu_bar,.header .menu_bar{padding-bottom:11px;}
+}
+@media (max-width:1023px) {
+.header .logo_bar{margin-bottom:15px;}
+.header .community_box{margin-top:15px;}
+.header .menu_bar li,.header_fix .menu_bar li{margin-right:25px;}
+.header .menu_bar{padding-bottom:10px;}
+}
+@media (max-width:767px) {
+.menu_btn_mo{float:right;display:block;}
+.header_fix .logo_bar{display:inline-block;margin-bottom:0;float:left;}
+.header_fix .logo{width:114px;margin-right:0px;vertical-align:top;float:left;}
+
+.header,.header_fix{padding:10px 0 0;}
+.header .logo_bar{margin-bottom:0;}
+.header .search_box,.header .community_box,.header .menu_bar,.header_fix .menu_bar{display:none;}
+.header .logo{width:114px;margin-right:30px;vertical-align:top;}
+.header .search_box, .header_fix .search_box {display:none;}
+.header .community_box, .header_fix .community_box {display:none;}
+}
+
+/*ipad*/
+@media (max-width: 1023px) and (min-width: 768px){
+.header .logo,.header_fix .logo{width:110px;}
+.header .search_box .search input,.header_fix .search_box .search input{width: 80%;}
+.header .search_box .list,.header_fix .search_box .list{display: none;}
+.header .community_box,.header_fix .community_box{margin-top: 0;}
+.header .search_box,.header_fix .search_box{width: 345px;}
+.header .logo_bar,.header_fix .logo_bar{margin-bottom:15px;overflow:hidden;}
+}
+
+/*ipad pro*/
+@media (device-width: 1024px) {
+.header .logo,.header_fix .logo{width:110px;}
+.header .search_box .search input,.header_fix .search_box .search input{width: 80%;}
+.header .search_box .list,.header_fix .search_box .list{display: none;}
+.header .community_box,.header_fix .community_box{margin-top: 0;}
+.header .search_box,.header_fix .search_box{width: 530px;}
+}
+
+/*content*/
+.content{}
+/*內頁架構*/
+.content .main{text-align:center;}
+.content .main .center{width:930px;text-align:left;}
+.content .main .center .title_box{}
+.content .detail_div h4 a{color:#000;}
+.content .main .center .author_box li{color: #626262;border-right:#626262 1px solid;margin-right:10px;padding-right:10px;}
+.content .main .center .author_box li:last-child{margin-right:0px;border-right:#626262 0px solid;}
+.content .main .center .author_box .time{background:url(../../images/health2020/time.svg)no-repeat left center;background-size:15px;padding-left:20px;}
+.content .main .center .title_box  .title{}
+.content .main .center .title_box  h1{font-size:30px;font-weight:normal;margin:0;padding:0;margin-bottom:20px;line-height:40px;}
+.content .main .center .title_box  .title_mo{display:none;color: #209c98;}
+.content .main .center .community_box{}
+.content .main .center .txt_scale{float:left;cursor:pointer;padding:5px 10px;color: #ffffff;background-color: #209c98;border-radius: 3px;}
+.content .main .center .community{float:right;}
+.content .main .center .community  li{width:35px;height:35px;margin-right:5px;position:relative;border-radius:60px;}
+.content .main .center .community  li .pop{display:none;width:100px;position:absolute; top:30px;right:-15px;background:url(../../images/health2020/pop.png)no-repeat center center;text-align:center;padding:15px ;}
+.content .main .center .community  li .pop p{padding-top:5px;font-size:18px;color: #209c98;}
+.content .main .center .community  li a{display:block;width:100%;height:100%;}
+.content .main .center .community  li:last-child{margin-right:0px;}
+.content .main .center .community  li:nth-child(1){background:url(../../images/health2020/content_community01.svg)no-repeat center center;background-color: #3bc115;}
+.content .main .center .community  li:nth-child(2){background:url(../../images/health2020/content_community02.svg)no-repeat center center;background-color: #3b5998;}
+.content .main .center .community  li:nth-child(3){background:url(../../images/health2020/content_community03.svg)no-repeat center center;background-color: #0a90fe;}
+.content .main .center .community  li:nth-child(4){background:url(../../images/health2020/content_community04.svg)no-repeat center center;background-color: #959595;}
+.content .main .center .community  li:nth-child(5){background:url(../../images/health2020/content_community05.svg)no-repeat center center;background-color: #209c98;}
+@media (max-width:1279px) {
+.content .main .center{width:670px;}
+.category_center{width:840px!important;}
+}
+@media (max-width:1023px) {
+.content .main .center{width:100%;}
+.category_center{width:100%!important;}
+.content .main .center .title_box  h1{font-size:24px;font-weight:normal;}
+.content .main .center .title_box  h1{line-height:32px;}
+}
+@media (max-width:767px) {
+.content .main .center .community{float:right;display:none;}
+.content .detail_div h2{font-size:18px;line-height: 28px;}
+.content .detail_div h3{font-size:18px;line-height: 28px;}
+.content .main .center .title_box  .title_mo{display:block;margin-bottom:5px;}
+
+}
+@media (max-width:359px) {
+.content .main .center .community  li{width:30px;height:30px;margin-right:2px;border-radius:60px;}
+.content .main .center .txt_scale{font-size:16px;}
+.content .main .center .title_box  h1{font-size:22px;font-weight:normal;}
+}
+/*內頁內容*/
+.content .detail_div{}
+.content .detail_div a{color: #378ad0;}
+.content .detail_div img{width:auto;max-width:100%; height:auto; margin: 0 auto;}
+.content .detail_div h2{font-weight: bold;color: #f57724;}
+.content .detail_div h3{font-weight: bold;color: #209c98;}
+.content .detail_div p{line-height: 32px;color: #000;font-weight: 400;}
+.content .detail_img{}
+.content .detail_img.video{height:523px;}
+@media (max-width:1279px) {
+.content .detail_img.video{height:417px;}
+}
+@media (max-width:767px) {
+.content .detail_img.video{height:216px;}
+}
+@media (max-width:413px) {
+.content .detail_img.video{height:194px;}
+}
+@media (max-width:412px) {
+.content .detail_img.video{height:215px;}
+}
+@media (max-width:375px) {
+.content .detail_img.video{height:194px;}
+}
+@media (max-width:374px) {
+.content .detail_img.video{height:186px;}
+}
+@media (max-width:359px) {
+.content .detail_img.video{height:163px;}
+}
+/*內頁內容ed*/
+/*關鍵字*/
+.content .tagwords_box{padding-top:10px;}
+.content .tagwords_box .tagwords{background:url(../../images/health2020/adwords01.svg)no-repeat left top;background-size:20px;padding-left:30px;margin-bottom:5px;}
+.content .tagwords_box .tagwords li {margin-right:5px;margin-bottom:16px;}
+.content .tagwords_box .tagwords li:last-child{margin-right:0px;}
+.content .tagwords_box .tagwords li a{padding:5px 10px;background-color: #f2ede9;overflow:hidden;font-weight: bold;}
+.content .tagwords_box .tagwords2{color: #378ad0;background:url(../../images/health2020/adwords02.svg)no-repeat 3px center;background-size:21px;padding-left:40px;}
+.content .tagwords_box .tagwords3{font-weight:bold;color:#000;font-size:19px;background:url(../../images/health2020/adwords03.svg)no-repeat 5px 5px;background-size:18px;padding-left:40px;}
+.content .tagwords_box .tagwords2 a{font-weight: bold;color: #378ad0;}
+.content .tagwords_box .tagwords3 a{font-weight: bold;color: #378ad0;}
+.content .tagwords_box .tagwords li  a:hover{color:#209c98;}
+@media (max-width:767px) {
+.content .tagwords_box .tagwords li {}
+.content .tagwords_box .tagwords li a{padding:5px 10px;}
+}
+/*關鍵字ed*/
+
+/*相關文章*/
+.content .related{overflow:hidden;}
+.content .related .list{}
+.content .related .list ul{margin-left:25px;}
+.content .related .list li{list-style: disc;line-height:40px;color: #378ad0;}
+.content .related .list li.pr{list-style: none;position:relative;}
+.content .related .list li .pr_img {width:15px;position:absolute;z-index:1;left:-22px;}
+.content .related .list li a{color: #378ad0;font-weight:bold;}
+@media (max-width:767px) {
+.content .related .list li{line-height:32px;}
+.content .related .list li a{font-size:18px;}
+}
+/*相關文章ed*/
+
+/*你可能會喜歡*/
+.content .art_like{}
+.content .art_like .btn{text-align:center;overflow:hidden;}
+.content .art_like .btn li {width: calc((100% - 10px )/2);}
+.content .art_like .btn li:last-child {margin-right:0;}
+.content .art_like .btn li a{padding-bottom:10px;border-bottom:4px solid rgba(0,0,0,0);}
+.content .art_like .btn li a:hover,.content .art_like .btn li.act a{color:#209c98;border-bottom:4px solid #209c98;}
+@media (max-width:767px) {
+.content .art_like .btn li {width: calc((100% - 10px )/2);margin-bottom:11px;}
+.content .art_like .btn li a{width:100%;font-size:22px;padding:0 0 8px 0;}
+}
+@media (max-width:359px){
+.content .art_like .btn li a{width:100%;font-size:18px;padding:0 6px 8px 6px;}
+}
+/*文章列表塊3n*/
+.art_list{}
+.art_list .play{float:left;width:25px;height:25px;background:url(../../images/health2020/play.svg)no-repeat center 3px;background-size:90%;margin-right:0px;}
+
+.art_list .img{margin-bottom:5px;height:160px;}
+.art_list .txt{font-weight:bold;height:55px;line-height:30px;overflow:hidden;}
+.art_list li{width: calc((100% - 72px)/3);margin-right:30px;}
+.art_list li a .img img{transition:0.3s;}
+.art_list li a:hover .img img{transform:scale(1.1);}
+.art_list li:nth-child(3n){margin-right:0px;}
+.art_list li a:hover .txt{color:#209c98;transition:0.3s;}
+@media (max-width:1279px) {
+.art_list .img{height:113px;}
+}
+@media (max-width:767px) {
+.art_list .play{float:left;width:20px;height:20px;}
+.art_list .txt{font-size:18px;line-height:24px;height:45px;}
+.art_list .img{height:104px;}
+.art_list li{width: calc((100% - 18px)/2);margin-right:10px;}
+.art_list li:nth-child(3n){margin-right:10px;}
+.art_list li:nth-child(2n){margin-right:0;}
+}
+@media (max-width:413px) {
+.art_list .img{height:103px;}
+}
+@media (max-width:375px) {
+.art_list .img{height:92px;}
+}
+@media (max-width:374px) {
+.art_list .img{height:88px;}
+}
+@media (max-width:359px) {
+.art_list .txt{font-size:16px;}
+.art_list .img{height:77px;}
+}
+/*文章列表塊3n ed*/
+/*你可能會喜歡ed*/
+
+/*加入line好友*/
+.line_friend{}
+.line_friend_mo{display:none;}
+.line_friend a,.line_friend_mo a{width: 100%;height:100%;display:block;}
+@media (max-width:767px) {
+.line_friend{display:none;}
+.line_friend_mo{display:block;}
+}
+/*加入line好友ed*/
+
+/*右側欄*/
+
+.content .main .right{width:300px;float:right;text-align:left;margin-left:20px;}
+.right .bottom{width:100%;height:1px;}
+.content .main .right_box{}
+.content .main .right .box{}
+.content .main .right .r_ad{}
+@media (max-width:1023px) {
+.content .main .right{display:none;}
+}
+/*人氣排行榜*/
+.popularity{}
+.popularity li{padding-bottom:20px;border-bottom:1px solid #c3c3c3;}
+.popularity li:last-child{margin-bottom:0;border-bottom:0px;}
+.popularity .num{color: #ffffff;float:left;margin-right:15px;background-color: #474747;padding: 5px 9px;font-style: italic;margin-top:13px;}
+.popularity .txt{height:50px;font-weight: bold;}
+.popularity .txt a:hover{color:#209c98;}
+
+.popularity_mo{display:none;margin-bottom:15px;}
+@media (max-width:1023px) {
+.popularity_mo{display:block;}
+.popularity li{width:calc((100% - 25px)/2);display:inline-block;margin-right:10px;vertical-align:top;}
+.popularity li:nth-child(even){margin-right:0px;}
+.popularity li:last-child{margin-bottom:0;border-bottom:1px solid #c3c3c3;}
+.popularity .num {margin-top: 10px;}
+.popularity .txt{height:50px;line-height:24px;}
+}
+@media (max-width:767px) {
+.popularity_mo{display:block;}
+.popularity li{width:100% ;display:block;margin-right:0px;}
+.popularity li:nth-child(even){margin-right:0px;}
+.popularity li:last-child{margin-bottom:0;border-bottom:0;}
+}
+/*人氣排行榜ed*/
+/*美體生活*/
+.r_art_body{}
+.art_body{display:none;text-align:left;}
+@media (max-width:1023px) {
+.art_body{display:block;}
+}
+/*美體生活*/
+/*右側欄四欄共用*/
+.r_art_list{}
+.r_art_list .img{width:45%;height:75px;margin-right:10px;line-height:0;float:left;}
+.r_art_list .txt_box{}
+.r_art_list .title{font-weight:bold;white-space:nowrap; text-overflow : ellipsis; transition:0.3s;}
+.r_art_list .txt{height:45px;line-height:22px;}
+.r_art_list .txt2{height:65px;font-weight:bold;margin-top:5px;}
+.r_art_list li{}
+.r_art_list li a .img img{transition:0.3s;}
+.r_art_list li a:hover .img img{transform:scale(1.1);}
+.r_art_list li:last-child{margin-bottom:0px;}
+.r_art_list li a:hover .title{color:#209c98;}
+.r_art_list li a:hover .txt2{color:#209c98; transition:0.3s;}
+/*右側欄四欄共用ed*/
+/*右關鍵字*/
+.r_tagwords{background:url(../../images/health2020/r_adwords_bg.png)no-repeat center bottom;background-color: #6ed5b6;padding:20px 4px 50px 8px;}
+.r_tagwords .title{font-weight:bold;text-align:center;}
+.r_tagwords .txt{font-weight:bold;text-align:center;}
+.r_tagwords .btn{margin:0 auto;width:max-content;border-radius: 3px;}
+.r_tagwords .btn a{color: #fff;background-color: #fca22b;padding:5px 15px;display:block;}
+.r_tagwords .list{text-align:center;font-weight:bold;}
+.r_tagwords .list li{overflow:hidden;margin-bottom:5px;margin-right:4px;}
+.r_tagwords .list li a{background-color: #f2ede9;padding:3px 10px;display:block;}
+.r_tagwords .list li a:hover{color:#209c98;}
+@media (max-width:1024px) {
+.r_tagwords .list li{margin-bottom:8px;}
+}
+@media (max-width:1023px) {
+.r_art_list .img{width:100%;height:95px;margin-right:0px;line-height:0;float:none;margin-bottom:5px;}
+.r_art_list .txt2{height:50px;font-weight:bold;margin-top:0;font-size:18px;line-height:24px;}
+.r_art_list li{display:inline-block;width: calc((100% - 65px)/4);margin-right:15px;margin-bottom:0;vertical-align:top;}
+.r_art_list li:nth-child(2n){margin-right:15px;}
+.r_art_list li:last-child{margin-bottom:0;margin-right:0px;}
+}
+@media (max-width:767px) {
+.r_art_list .txt2{font-size:18px;line-height:24px;height:45px;}
+.r_art_list .img{height:104px;}
+.r_art_list li{width: calc((100% - 18px)/2);margin-right:10px;margin-bottom:15px;vertical-align:top;}
+.r_art_list li:nth-child(2n){margin-right:0px;}
+}
+@media (max-width:413px) {
+.r_art_list .img{height:103px;}
+}
+@media (max-width:375px) {
+.r_art_list .img{height:92px;}
+}
+@media (max-width:374px) {
+.r_art_list .img{height:88px;}
+}
+@media (max-width:359px) {
+.r_art_list .txt2{font-size:16px;}
+.r_art_list .img{height:77px;}
+}
+/*右關鍵字ed*/
+/*右側欄ed*/
+
+/*更多文章*/
+.next_page{width:40%;height:1px;position:relative;background-color:#919191;margin:50px auto;}
+.next_page .txt{width:100%;position:absolute;top:-18px;}
+.next_page p{width:max-content;background-color:#fff;font-size:18px;color:#919191;margin:0 auto;padding:5px 10px;}
+@media (max-width:767px) {
+.next_page{width:80%;}
+.next_page p{font-size:16px;}
+}
+/*更多文章ed*/
+
+/*search page 手機*/
+.search_page{margin:15px 0;}
+.search_page .search_box{display:none;}
+.search_page .search_box  .search{width:100%;margin-bottom:20px;border-radius:5px;background-color: #e5e5e5;line-height:0;overflow:hidden;position:relative;}
+.search_page .search_box  .search input{float:left;width:78%;padding:10px;border:none;background-color: #e5e5e5;color: #393939;}
+.search_page .search_box  .search button{
+width:38px;height:38px;border:none;background-color: #209c98;float:right;
+background:url(../../images/health2020/search_btn.svg)no-repeat center center;background-size:50%;
+background-color: #209c98;cursor:pointer;
+}
+.search_page .search_box  .search .xx{right:38px;width:38px;height:38px;position:absolute;background-color: rgba(0,0,0,0);
+background:url(../../images/health2020/icon-close.svg)no-repeat center center;background-size:40%;}
+
+
+/*search關鍵字*/
+.search_page .tagwords_box{}
+.search_page .tagwords_box .title{font-size: 18px;}
+.search_page .tagwords_box .tagwords{background:none;padding-left:0px;}
+.search_page .tagwords_box .tagwords li {margin-right:5px;margin-bottom:20px;}
+.search_page .tagwords_box .tagwords li:last-child{margin-right:0px;}
+.search_page .tagwords_box .tagwords li a{padding:5px 10px;background-color: #f2ede9;font-weight: bold;}
+.search_page .tagwords_box .tagwords li  a:hover{color:#209c98;}
+
+
+.search_result{}
+.search_txt{font-size: 14px;color: #393939;}
+.search_txt a{color: #209c98;margin-right:5px;}
+.search_btn{margin-bottom:20px;}
+.search_btn li{margin-right:10px;border-radius: 3px;}
+.search_btn li a{padding:5px 20px;color: #209c98;font-size: 16px;border:1px #209c98 solid; }
+.search_btn li a:hover,.search_btn li.act a{color: #fff!important;font-size: 16px;border:1px #209c98 solid; background-color: #209c98;}
+.search_result .list{}
+
+.search_result .list li {width: calc((100% - 72px)/3);display:inline-block;margin-right:30px;}
+.search_result .list li:nth-child(3n){margin-right:0px;}
+.search_result .list .img {width:100%;height:161px;display:block;margin-bottom:5px;overflow:hidden;}
+.search_result .list li .play {float:left;}
+.search_result .list  a .img img{transition:0.3s;}
+.search_result .list a:hover .img img{transform:scale(1.1);transition:0.3s;}
+.search_result .list .txt{width:100%;height:55px;font-weight:bold;margin-bottom:10px;line-height:30px;}
+.search_result .list .time{font-size: 14px;color: #626262;}
+.search_result .list li a:hover,.search_result li.act a{color: #209c98;}
+
+.search_result  .topic_list.inpage li{padding-bottom:15px;}
+.search_result  .topic_list li{width:100%;padding-bottom:30px;}
+.search_result  .topic_list .btn_box{display:inline-block;vertical-align:top;}
+.search_result  .topic_list .btn a{padding:5px 10px;background-color:#f1ece8;}
+.search_result  .topic_list span{margin-right:10px;font-size:16px;}
+.search_result  .topic_list .txt{font-size:16px;}
+.search_result  .track_icon{
+cursor:pointer;float:right;color:#209c98;border:1px #209c98 solid;
+padding:2px 15px 3px 35px;border-radius:5px;font-size:16px;
+background:url(../images/track-icon-1.svg)no-repeat 13px center;
+background-size:18px;
+}
+
+.search_result  .track_icon.act{
+background:url(../images/track-icon-2.svg)no-repeat 13px center;
+background-size:18px;
+background-color:#209c98;
+color:#fff;
+}
+.search_result  .track_icon.inpage{float:none;display:inline-block;vertical-align:top;}
+/*search關鍵字ed*/
+@media (max-width:1279px) {
+.search_result .list .img {width:100%;height:112px;}
+}
+@media (max-width:1023px) {
+.search_result .list .img {width:100%;height:125px;}
+}
+@media (max-width:767px) {
+.search_result  .track_icon.inpage{float:right;}
+.search_result .topic_list span,.search_result  .topic_list .txt,.search_result  .track_icon{font-size:14px;}
+.search_result .topic_list .txt{display:block;margin-top:10px;}
+.search_result .list li {width:100%;display:block;margin-right:0px;}
+.search_result .list li .play {float:left;margin-right:3px;}
+.search_result .list .txt{width:auto;height:49px;font-weight:bold;margin-bottom:10px;line-height:24px;}
+.search_page{display:block;}
+.search_page .search_box{display:block;}
+.search_btn{text-align:center;margin-bottom:15px;}
+.search_result .list .img{
+width: 40%;
+height:86px;
+margin-right: 10px;
+line-height: 0;
+float: left;
+}
+}
+@media (max-width:413px) {
+.search_result .list .img{ height:78px;}
+.search_result .list .txt{margin-bottom:2px;}
+}
+@media (max-width:412px) {
+.search_result .list .img{ height:85px;}
+.search_result .list .txt{margin-bottom:2px;}
+}
+@media (max-width:375px) {
+.search_result .list .img{ height:78px;}
+.search_result .list .txt{margin-bottom:2px;}
+}
+@media (max-width:359px) {
+.search_result .list .play{width:20px;height:20px;}
+.search_result .list .txt{height:45px;font-size:16px;}
+.search_result .list .img{ height:65px;}
+}
+/*search page 手機ed*/
+/*內頁架構ed*/
+/*content ed*/
+/*footer*/
+.footer_box{position:fixed;bottom:0;width:100%;z-index:3;}
+.footer1{position:absolute;top:-5px;width:100%;}
+.footer_mask{display:none;position:fixed;width:100%;height:100%;z-index:2;top:0;}
+.footer {
+	width:100%;
+	position:relative;
+	margin:0;
+	padding:0 !important;
+	background:#393939;
+	box-shadow:#393939 0px 0px 10px;
+}
+.footer_arraw_box{
+width:100%;
+position:absolute;
+top:-35px;
+}
+
+.footer_arraw .btn1,.footer_arraw .btn2{
+width:100%;
+height:100%;
+position:absolute;
+display:block;
+z-index:1;
+overflow:hidden;
+
+}
+.footer_arraw_box .btn2{display:none;}
+.footer_arraw{
+	position:relative;
+	overflow:hidden;
+	width:120px;height:120px;
+	box-shadow:#393939 0px 0px 10px 0px;
+	border-radius:500px;
+	cursor: pointer;
+	z-index: 1;
+	background: url(../../images/health2020/footer_arraw.png) no-repeat center 15px; background-size:25px;
+	background-color:#393939;
+	margin:0 auto;
+}
+
+
+.footer_center_box{overflow:hidden;}
+.footer_center{padding:50px 0 0;list-style:none;}
+.footer_center_L{width:40%;margin-right:10px;}
+.footer_center_L,.footer_center_R{float: left;}
+.footer_center_L h2{color:#fff;margin-bottom:20px;line-height: 24px;}
+.footer_center_L .logo{width:134px;margin-bottom:30px;}.footer_center_L .logo img{width:100%;height:100%;}
+.footer_center_L .txt{word-wrap:break-word;}
+.footer_center_L .txt li{color:#fff;padding-bottom:10px;padding-left:30px;width: 100%;}
+.footer_center_L .txt li a{color:#fff;}
+.footer_center_L .txt li:nth-child(1){background: url(../../images/health2020/footer_list02.png) no-repeat; background-size:30px;background-position:left -2px;}
+.footer_center_L .txt li:nth-child(2){background: url(../../images/health2020/footer_list03.png) no-repeat; background-size:30px;background-position:left -2px;}
+.footer_center_L .txt li:nth-child(3){background: url(../../images/health2020/footer_list03.png) no-repeat; background-size:30px;background-position:left -2px;}
+
+.footer_center_R{width:55%;margin-top:65px; overflow:hidden;}
+.footer_center_R ul{text-align:center;}
+.footer_center_R li{ border-top:#ffea83 2px solid;float:left;padding:20px 0 30px;vertical-align:top;margin-right:95px;}
+.footer_center_R li:last-child{margin-right:0;}
+.footer_center_R li h2{margin-bottom:15px;text-align:left;}
+.footer_center_R li h2 a:hover{color:#209c98;}
+.footer_center_R li h2:last-child{margin-bottom:0px;}
+
+.footer_bottom {
+	width:100%;
+	color: #fff;
+	font-size:14px;
+	margin:0;
+	padding:10px 0 30px;
+	border-top:#fff 1px solid;
+	overflow: hidden;
+}
+
+.footer a{color: #fff;}
+.footer a:hover{color:#209c98;}
+
+.footer_bottom .link {list-style:none;float:left;}
+.footer_bottom .link li{display:inline;}
+.footer_bottom .link li::after{content:"│";padding-left: 10px;padding-right:6px;color:#aaaaaa;}
+.footer_bottom .link li:last-child::after{content:"";padding:0;margin:0;}
+.footer_bottom .link li a{color:#aaaaaa;}
+.footer_bottom .link li:last-child a{border-right:none;}
+.footer_bottom .link li a:hover{color:#209c98;}
+.footer_bottom .copyright {float:right;color:#aaaaaa;}
+
+@media (max-width:1279px) {
+.footer_center_L{margin-right:30px}
+.footer_center_R li{margin-right:50px}
+.footer_center_box h2 {font-size:16px;}
+.footer_bottom {font-size:12px;}
+}
+@media (max-width:1023px) {
+.footer_center_L .logo{width:100px;margin-bottom:10px;}
+.footer_center_L{margin-right:20px;margin-bottom:20px;}
+.footer_center_R li{margin-right:15px}
+.footer_center_box h2 {font-size:16px;}
+.footer_bottom {font-size:12px;text-align:center;}
+.footer_bottom .link{float: none;margin-bottom:5px;}
+.footer_bottom .copyright { float: none;clear:both; color: #aaaaaa;overflow:hidden;}
+}
+@media (max-width:767px) {
+.footer {display:none;}
+}
+
+/*footer ed*/
+
+/*首頁*/
+.index_kv{text-align:left;}
+.index_kv  a:hover .title{color:#209c98;transition:0.3s;}
+.index_kv .kv_left,.index_kv .kv_right{width:calc((100% - 37px)/2);vertical-align:top;margin-right:30px;}
+.index_kv .kv_left .img{margin-bottom:18px;height:341px;}
+.index_kv .kv_left a .img img{transition:0.3s;}
+.index_kv .kv_left a:hover .img img{transform:scale(1.1);transition:0.3s;}
+.index_kv .kv_left .title{font-weight:bold;margin-bottom:10px;white-space:nowrap;text-overflow:ellipsis; }
+.index_kv .kv_left .txt{height:45px;line-height:24px;-webkit-line-clamp:2;-webkit-box-orient:vertical;text-overflow:ellipsis;display:-webkit-box; }
+.index_kv .kv_right{margin-right:0px;}
+.index_kv .play{float:none;display: inline-block;vertical-align:baseline;}
+.index_kv .kv_right .img{height:161px;margin-bottom:5px;}
+.index_kv .kv_right a .img img{transition:0.3s;}
+.index_kv .kv_right a:hover .img img{transform:scale(1.1);transition:0.3s;}
+.index_kv .kv_right .title{font-weight:bold;height:60px;line-height:28px;-webkit-line-clamp:2;-webkit-box-orient:vertical;text-overflow:ellipsis;display:-webkit-box;}
+.index_kv .kv_right li{width:calc((100% - 35px)/2);margin-right:30px;vertical-align:top;margin-bottom:5px;}
+.index_kv .kv_right li:nth-child(even){margin-right:0px;}
+
+.index_kv .kv_right_mo{display:none;position:relative;height:260px;}
+.index_kv .kv_right_mo .play{background: url(../../images/health2020/play.svg)no-repeat center top;margin-right:5px;}
+.index_kv .kv_right_mo .img{margin-bottom:10px;height:199px;border-radius:8px;}
+.index_kv .kv_right_mo .title{
+margin:10px ;font-weight:bold;font-size:20px;height:50px;line-height:24px;
+-webkit-line-clamp:2;-webkit-box-orient:vertical;text-overflow:ellipsis;display:-webkit-box;
+}
+.index_kv .kv_right_mo ul{width:260%;position:absolute;left:-80%;}
+@media (max-width:1279px) {
+.index_kv .kv_left .img{margin-bottom:18px;height:272px;}
+.index_kv .kv_left,.index_kv .kv_right{width:calc((100% - 30px)/2);margin-right:20px;}
+.index_kv .kv_right{margin-right:0px;}
+.index_kv .kv_right li{width:calc((100% - 30px)/2);margin-right:20px;}
+.index_kv .kv_right .img{height:129px;margin-bottom:5px;}
+}
+@media (max-width:1023px) {
+.index_kv .kv_right .play{background: url(../../images/health2020/play.svg)no-repeat center top;background-size: 75%;}
+.index_kv .kv_left .img{margin-bottom:10px;height:199px;}
+.index_kv .kv_left,.index_kv .kv_right{width:calc((100% - 25px)/2);margin-right:15px;}
+.index_kv .kv_left .title{margin-bottom:10px;font-size:20px;line-height:24px;}
+.index_kv .kv_left .txt{font-size:18px;}
+.index_kv .kv_right{margin-right:0px;}
+.index_kv .kv_right li{width:calc((100% - 25px)/2);margin-right:15px;}
+.index_kv .kv_right .img{height:91px;margin-bottom:5px;}
+
+.index_kv .kv_right .title{font-size:18px;line-height:22px;height:48px;}
+.index_kv .kv_right li{margin-bottom:10px;}
+}
+@media (max-width:767px) {
+.index_kv .kv_right{display:none;}
+.index_kv .kv_right_mo{display:block;}
+.index_kv .kv_left{display:block;width:100%;margin-bottom:15px;}
+.index_kv .kv_left .img{margin-bottom:10px;height:233px;}
+.index_kv .kv_left .title{font-weight:bold;text-overflow:normal;white-space: normal;margin:0 30px 18px;height:50px; }
+.index_kv .kv_left .txt{display:none;}
+.index_kv .padding_lr{padding:0;}
+}
+@media (max-width:412px) {
+.index_kv .kv_left .img{height:231px;}
+
+}
+@media (max-width:411px) {
+.index_kv .kv_left .img{height:210px;}
+.index_kv .kv_right_mo{height:235px;}
+.index_kv .kv_right_mo .img{height:179px;}
+}
+@media (max-width:374px) {
+.index_kv .kv_left .img{height:202px;}
+.index_kv .kv_right_mo{height:230px;}
+.index_kv .kv_right_mo .img{height:172px;}
+}
+@media (max-width:359px) {
+.index_kv .kv_left .img{height:180px;}
+.index_kv .kv_right_mo{height:210px;}
+.index_kv .kv_right_mo .img{height:153px;}
+}
+
+/*首頁四欄共用*/
+.index_art_list{margin-bottom:0;text-align:left;}
+.index_art_list .art_title{margin-top:10px;}
+.index_art_list .ad_mo{margin-bottom:0;}
+.index_art_list .bg_box{}
+.index_art_list .more{float:right;}
+.index_art_list .list{text-align: left;}
+.index_art_list .list .img{height:160px;line-height:0;margin-bottom:5px;}
+.index_art_list .list li a .img img{transition:0.3s;}
+.index_art_list .list li a:hover .img img{transform:scale(1.1);transition:0.3s;}
+.index_art_list .list .title{font-weight:bold;height:55px;line-height:28px;-webkit-line-clamp:2;-webkit-box-orient:vertical;text-overflow:ellipsis;display:-webkit-box;margin-bottom:5px;}
+.index_art_list .list .title .play{float: none;display: inline-block;vertical-align:baseline;}
+.index_art_list .list .tag{padding-top: 10px;white-space: nowrap;}
+.index_art_list .list .tag p{display:inline-block;margin-right:5px;}
+.index_art_list .list .tag p a{overflow:hidden;font-size:14px;padding:5px 10px; background-color: #f2ede9;}
+.index_art_list .list .tag p a:hover{color:#209c98}
+.index_art_list .list li{width:calc((100% - 107px)/4);margin-right:30px;margin-bottom:20px;vertical-align:top;}
+.index_art_list .list li:nth-child(4){margin-right:0;}
+.index_art_list .list li a:hover{color: #209c98;}
+@media (max-width:1279px) {
+.index_art_list .list li{width:calc((100% - 76px)/4);margin-right:20px;}
+.index_art_list .list .img{height:129px;}
+}
+@media (max-width:1023px) {
+.index_art_list .padding_lr{padding:5px 15px 15px;overflow:hidden;}
+.index_art_list .list li{width:calc((100% - 65px)/4);margin-right:15px;}
+.index_art_list .list .img{height:95px;}
+.index_art_list .list .title{font-size:18px;line-height:24px; height:50px;}
+.index_art_list .list .title .play{background: url(../../images/health2020/play.svg)no-repeat center center;background-size:75%;}
+}
+@media (max-width:767px) {
+.index_art_list .padding_lr{padding:10px 15px 15px;overflow:hidden;}
+.index_art_list .bg_box{background-color:#fff;box-shadow: 0 0 4px 1px rgba(57, 57, 57, 0.11);margin:15px;}
+.index_art_list{background: url(../../images/health2020/line_bg.png) repeat;}
+.index_art_list .list li{width:100%;margin-right:0px;margin-bottom:15px;}
+.index_art_list .list .title{font-size:18px;line-height:24px; height:50px;}
+.index_art_list .list li:first-child{margin-bottom:22px;}
+.index_art_list .list li:first-child .img{width:100%;height:199px;float:none;margin-right:0px;margin-bottom:5px;}
+.index_art_list .list .img{width:45%;height:89px;float:left;margin-right:10px;margin-bottom:0;}
+.index_art_list .list .tag{padding-top:5px;}
+.index_art_list .list .tag p a{padding:5px; }
+.index_art_list .list .title .play{background-size:90%;}
+}
+@media (max-width:413px) {
+.index_art_list .list .img{height:89px;}
+.index_art_list .list .tag{padding-top:5px;}
+.index_art_list .list .tag p a{padding:5px; }
+}
+@media (max-width:411px) {
+.index_art_list .list li:first-child .img{height:177px;}
+.index_art_list .list .img{height:79px;}
+}
+
+@media (max-width:374px) {
+.index_art_list .list li:first-child .img{height:169px;}
+.index_art_list .list .title{margin-bottom:0;}
+.index_art_list .list .img{height:76px;}
+.index_art_list .list .tag{padding-top:5px;}
+.index_art_list .list .tag p a{padding:5px; }
+}
+@media (max-width:359px) {
+.index_art_list .list li:first-child .img{height:146px;}
+.index_art_list .list .title{font-size:16px;line-height:22px; height:45px;margin-bottom:0;}
+.index_art_list .list .img{height:66px;}
+.index_art_list .list .tag p a{padding:2px 5px; }
+
+}
+/*首頁四欄共用ed*/
+/*懶人包二欄共用*/
+.index_art_list2{background: url(../../images/health2020/line_bg.png) repeat;}
+.index_art_list2{text-align:left;}
+.index_art_list2 .more{float:right;}
+.index_art_list2 .list{}
+.index_art_list2 .list .img{height:152px;display:inline-block;width:calc((100% - 70px)/2);margin-right:30px;vertical-align:top;}
+.index_art_list2 .list .txt_box{width:50%;margin-top:10px;display:inline-block;}
+.index_art_list2 .list .title{font-size:24px;font-weight: bold;margin-bottom: 5px;white-space: nowrap;text-overflow: ellipsis;}
+.index_art_list2 .list .txt{font-size:18px;height:85px;line-height:28px;}
+.index_art_list2 .list li{display:inline-block;width:calc((100% - 37px)/2);margin-right:30px;}
+.index_art_list2 .list li:nth-child(2n){margin-right:0;}
+.index_art_list2 .bg_box{background-color:#fff;box-shadow: 0 0 4px 1px rgba(57, 57, 57, 0.11);margin:20px 15px; padding:20px 15px;}
+@media (max-width:1279px) {
+.index_art_list2 .list li{width:calc((100% - 47px)/2);margin-right:15px;}
+.index_art_list2 .list .txt_box{margin-top:0px;}
+.index_art_list2 .list .title{font-size:22px;}
+.index_art_list2 .list .img{width:calc((100% - 47px)/2);height:118px;margin-right:15px;}
+}
+@media (max-width:1023px) {
+.index_art_list2 .list li{width:calc((100% - 47px)/2);margin-right:15px;}
+.index_art_list2 .list .txt_box{margin-top:0px;}
+.index_art_list2 .list .title{font-size:18px;}
+.index_art_list2 .list .txt{font-size:18px;height:45px;line-height:24px;}
+.index_art_list2 .list .img{height:85px;width:calc((100% - 45px)/2);margin-right:15px;}
+}
+@media (max-width:767px) {
+.index_art_list2 .list li{display:block;width:100%;margin-right:0px;margin-bottom:15px;}
+.index_art_list2 .list .img{width:45%;height:89px;float:left;margin-right:10px;}
+.index_art_list2{background:none;margin-bottom:0;}
+.index_art_list2 .inbox{background: url(../../images/health2020/line_bg.png) repeat;}
+.index_art_list2 .bg_box{background-color:#fff;box-shadow: 0 0 4px 1px rgba(57, 57, 57, 0.11);margin:20px 15px; padding:20px 15px;}
+}
+@media (max-width:411px) {
+.index_art_list2 .list .img{height:79px;}
+}
+@media (max-width:374px) {
+.index_art_list2 .list .title{margin-bottom:0;}
+.index_art_list2 .list .img{height:76px;}
+}
+@media (max-width:359px) {
+.index_art_list2 .list .title{font-size:16px;line-height:20px; margin-bottom:0;}
+.index_art_list2 .list .txt{font-size:16px;height:45px;line-height:24px;}
+.index_art_list2 .list .img{height:66px;}
+}
+/*懶人包二欄共用*/
+
+/*首頁關鍵字ed*/
+.index_tagwords{
+
+}
+.index_tagwords .title{
+font-weight:bold;margin-bottom:20px;color:#000;
+}
+.index_tagwords  .txt{font-weight:bold;text-align:left;color:#393939;}
+.index_tagwords  .btn{position:absolute;margin:0 auto 16px;width:max-content;vertical-align:bottom;bottom:-10px;right:-40%; }
+.index_tagwords  .btn a{font-size:16px;color: #fff;background-color: #fca22b;padding:0px 20px;display:block;border-radius: 3px;}
+.index_tagwords  .list{text-align:center;font-weight:bold;text-align:left;}
+.index_tagwords  .list li{display:inline-block;overflow:hidden;margin-bottom:8px;margin-right:6px;}
+.index_tagwords  .list li a{ font-size:14px;background-color: #f2ede9;padding:3px 10px;display:block;}
+.index_tagwords  .list li a:hover{color:#209c98;}
+.index_tagwords .tagwords_box{
+background: url(../../images/health2020/adwords_bg.png)no-repeat center bottom;
+background-color: #6ed5b6;
+background-size:100%;
+padding: 20px 15px 20px 15px;
+text-align:center;
+}
+.index_tagwords .title_box{
+font-size:22px;
+margin-top:20px;
+width:480px;margin-right:0px;
+display:inline-block;text-align:left; vertical-align:middle;
+}
+.index_tagwords .txt_box{
+position:relative;
+font-size:20px;
+line-height:35px;
+margin-top:20px;
+width:200px; vertical-align:middle;
+display:inline-block;text-align:left;
+}
+@media (max-width:1279px) {
+.index_tagwords .tagwords_box{background-size:140%;}
+}
+@media (max-width:1023px) {
+.index_tagwords .tagwords_box{background-size:120%;}
+.index_tagwords  .btn{bottom:auto;right:auto;left:0; }
+.index_tagwords .title_box{
+font-size:22px;
+margin-top:0px;
+margin-right:20px;
+width:350px;
+}
+.index_tagwords .txt_box{
+line-height:35px;
+margin-top:20px;
+width:200px; vertical-align:top;
+display:inline-block;text-align:left;
+}
+.index_tagwords .padding_lr{padding:0;}
+
+}
+@media (max-width:767px) {
+.index_tagwords .tagwords_box{
+background: url(../../images/health2020/r_adwords_bg.png)no-repeat center bottom;
+background-color: #6ed5b6;
+background-size:120%;
+padding: 20px 30px 40px 30px;
+}
+.index_tagwords .title_box{
+display:block;
+font-size:22px;
+margin-right:0px;
+margin:0 auto;
+width:auto;
+}
+.index_tagwords .txt_box{
+display:block;
+line-height:35px;
+margin:0 auto;
+width:auto;
+}
+.index_tagwords .title,.index_tagwords .txt{
+text-align:center;margin-bottom:20px;
+}
+.index_tagwords  .btn{position:relative;bottom:auto;right:auto;left:0; }
+.index_tagwords .tagwords_box{padding: 20px 15px 40px 15px;}
+.index_tagwords  .list{margin:0 auto 10px;}
+
+}
+@media (max-width: 375px) and  (min-width: 361px){
+.index_tagwords .list{width:85%;}
+}
+@media (max-width: 360px) and  (min-width: 320px){
+.index_tagwords .list{width:90%;}
+}
+/*首頁關鍵字區塊ed*/
+
+/*人氣收藏區塊mo版變2x2*/
+.index_art_list.type2{}
+.index_art_list.type2 .list li{}
+@media (max-width:1023px) {
+.index_art_list.type2 .list .title{
+ height: 45px;
+ font-size: 18px;
+line-height: 24px;}
+}
+@media (max-width:767px) {
+.index_art_list.type2 .list li{display:inline-block;vertical-align:top;}
+.index_art_list.type2 .list li {width: calc((100% - 18px)/2);margin-right: 10px;}
+.index_art_list.type2 li:nth-child(even){margin-right: 0px;}
+.index_art_list.type2 .list li:first-child .img{height:104px;}
+.index_art_list.type2 .list li{margin-bottom:15px;;}
+.index_art_list.type2 .list .img{height:104px;width:100%;display:block;margin-right:0;float:none;margin-bottom:5px;}
+.index_art_list.type2 .list .txt_box{width:100%;display:block;}
+.index_art_list.type2 .list .tag{display:none;}
+.index_art_list.type2 .bg_box {
+ background-color: #fff;
+ box-shadow: none;
+ margin: 0;
+}
+}
+@media (max-width:411px) {
+.index_art_list.type2 .list li:first-child .img,.index_art_list.type2 .list .img{height:93px;}
+}
+@media (max-width:374px) {
+.index_art_list.type2 .list li:first-child .img,.index_art_list.type2 .list .img{height:88px;}
+}
+@media (max-width:359px) {
+.index_art_list.type2 .list li:first-child .img,.index_art_list.type2 .list .img{height:77px;}
+.index_art_list.type2 .list .title{width:100%;line-height:22px;}
+}
+/*人氣收藏區塊mo版變2x2ed*/
+/*熱門文章*/
+.hot_art .list {overflow:hidden;}
+.hot_art .list .ad_mo{padding:10px 0 0;background-color:#fff;}
+.hot_art .list .img{width:30%;height:157px;float:left;margin-right:30px;display:block;overflow:hidden;}
+.hot_art .list .txt_box{display:block;overflow:hidden;margin-bottom:15px;}
+.hot_art .list .title{font-size:22px;font-weight: bold;white-space: nowrap;text-overflow: ellipsis;margin:10px 0;}
+.hot_art .list .txt{font-size:16px;height:70px;line-height:24px;-webkit-line-clamp: 3;-webkit-box-orient: vertical;text-overflow: ellipsis;display: -webkit-box;}
+.hot_art .list .tag{overflow:hidden;padding:5px 0;display:block;white-space: nowrap;}
+.hot_art .list .tag p{display:inline-block;margin-right:5px;}
+.hot_art .list .tag p a{overflow:hidden;font-size:14px;padding:5px; background-color: #f2ede9;}
+.hot_art .list .tag p a:hover{color:#209c98;}
+.hot_art .list .play{margin-top:1px;margin-right:2px;}
+.hot_art .list li {overflow:hidden;}
+
+@media (max-width:1279px) {
+.hot_art .list .img{height:113px;margin-right:20px;}
+.hot_art .list .txt_box{margin-bottom:5px;}
+.hot_art .list .txt{font-size:16px;height:45px;line-height:24px;-webkit-line-clamp: 2;}
+.hot_art .list .title{font-size:22px;margin:0  0 5px;}
+}
+@media (max-width:1023px) {
+.hot_art .list .img{width:35%;height:145px;margin-right:15px;}
+.hot_art .list .txt_box{margin-bottom:5px;}
+.hot_art .list .title{font-size:20px;margin:10px  0 5px;}
+.hot_art .list li {overflow:hidden;margin-bottom:20px;}
+}
+@media (max-width:767px) {
+.hot_art .list .img{width:45%;height:97px;margin-right:15px;}
+.hot_art .list .title{font-size:18px;font-weight: bold;white-space:normal;margin: 0 ;height:50px;
+  -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    display: -webkit-box;}
+.hot_art .list .txt_box{margin-bottom:0;}
+.hot_art .list .txt{display:none;}
+.hot_art .list .play{display:inline-block;float:none;height: 20px;margin-top:0;margin-right:2px; background: url(../../images/health2020/play.svg)no-repeat center bottom;background-size: 90%;}
+.hot_art .list li {overflow:hidden;margin-bottom:15px;}
+.hot_art .list .tag{margin-top:15px;}
+}
+@media (max-width:411px) {
+.hot_art .list .img{width:45%;height:87px;margin-right:10px;}
+.hot_art .list .tag{margin-top:6px;}
+}
+@media (max-width:374px) {
+.hot_art .list .img{width:45%;height:83px;}
+.hot_art .list .tag{margin-top:3px;}
+}
+@media (max-width:359px) {
+.hot_art .list .img{width:45%;height:73px;}
+.hot_art .list  .title{font-size:16px;line-height:22px;height:45px;}
+.hot_art .list .play{ width:18px;height:18px; }
+}
+/*熱門文章ed*/
+/*首頁ed*/
+
+/*分類頁*/
+.category_kv{text-align:left;background: url(../../images/health2020/line_bg.png) repeat;padding:5px 0;}
+.category_kv .bg_box{background-color:#fff;box-shadow: 0 0 4px 1px rgba(57, 57, 57, 0.11);margin:20px 15px; padding:20px 15px;}
+.category_kv .inbox{width:1030px;overflow:visible;}
+.category_kv .owl-dots{display:none!important;}
+.category_kv .owl-prev,.category_kv .owl-next{width:30px;height:30px;position:absolute!important;z-index:1;top:40%;}
+.category_kv .owl-prev{background: url(../../images/health2020/Larraw.svg)no-repeat center center!important;left:-6%;}
+.category_kv .owl-next{background: url(../../images/health2020/Rarraw.svg)no-repeat center center!important;right:-6%;}
+.category_kv a .img img{transition:0.3s;}
+.category_kv .list .img {margin-bottom:5px;}
+.category_kv .list .title {
+   font-size:22px;
+    font-weight: bold;
+    height: 60px;
+    line-height: 28px;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+}
+.category_kv .list .play {float:none;display:inline-block;vertical-align:text-top; }
+@media (max-width:1279px) {
+.category_kv .inbox{width:900px;}
+}
+@media (max-width:1023px) {
+.category_kv .list .play {
+    margin-top: 1px;
+    margin-right: 2px;
+}
+.category_kv .list .title {font-size:20px;}
+.category_kv .inbox{width:95%;}
+.category_kv .owl-prev{left:-8%;}
+.category_kv .owl-next{right:-8%;}
+.category_hot{width:85%;margin:0 auto;}
+.category_hot .title {
+    font-size: 20px;
+    margin: 2px 0 5px!important;
+}
+.category_hot .img {height:123px;}
+}
+@media (max-width:767px) {
+.category_hot .title { margin: 0 0 5px!important;}
+.category_kv .art_title{margin:0 15px;margin-bottom:15px;}
+.category_kv{}
+.category_kv .padding_lr{padding:0;}
+.category_kv{text-align:left;background: none;padding: 0;}
+.category_kv .inbox{width:414px;overflow:hidden;}
+.category_kv .bg_box {
+ background-color: #fff;
+ box-shadow: none;
+ margin: 0;
+ padding:0;
+}
+.category_kv .owl-prev,.category_kv .owl-next{display:none!important;}
+.category_hot{width:100%;}
+.category_hot .img {height:97px;}
+.category_kv .list{position:relative;height:260px;}
+.category_kv .list .play{background: url(../../images/health2020/play.svg)no-repeat center top;margin-right:5px;}
+.category_kv .list .img{margin-bottom:10px;height:199px;border-radius:8px;}
+.category_kv .list .title{
+margin:10px ;font-weight:bold;font-size:20px;height:50px;line-height:24px;
+-webkit-line-clamp:2;-webkit-box-orient:vertical;text-overflow:ellipsis;display:-webkit-box;
+}
+.category_kv .list ul{width:260%;position:absolute;left:-80%;}
+}
+@media (max-width:414px) {
+.category_kv .inbox{width:100%;}
+}
+@media (max-width:411px) {
+.category_kv .list{height:235px;}
+.category_hot .title { margin: 0!important;}
+.category_kv .inbox{width:100%;}
+.category_kv .list .img{height:179px;}
+.category_hot .img {height:87px;}
+}
+@media (max-width:374px) {
+.category_kv .list{height:230px;}
+.category_kv .list .img{height:172px;}
+}
+@media (max-width:359px) {
+.category_kv .list{height:210px;}
+.category_kv .list .img{height:152px;}
+}
+
+/*分類頁ed*/
+
+.play{vertical-align:baseline; }
+
+/*網頁架構ed*/
+
+/*跳頁按鈕*/
+.jump_box{width:100%;text-align:center;overflow:hidden;}
+.jump_aft{display:inline-block;}
+.jump_bef{display:inline-block;}
+.jump_bef li{display:inline-block;}
+.jump_aft li{display:inline-block;}
+.jump_btn{display:inline-block;}
+.jump_btn li,.jump_bef li,.jump_aft li{margin-bottom:15px;vertical-align:top;width:35px;height:28px;display:inline-block;margin-right:2px;border:1px #1e9c96 solid;padding-top:5px;border-radius:5px;cursor:pointer;color: #1e9c96;transition:0.3s;}
+/* .jump_bef li:first-child{background: url(../../images/health2020/jumpbtn_03.svg)no-repeat center center;background-size:60%;}
+.jump_bef li:nth-child(2){background: url(../../images/health2020/jumpbtn_01.svg)no-repeat  center center;background-size:60%;}
+.jump_aft li:first-child{background: url(../../images/health2020/jumpbtn_02.svg)no-repeat center center;background-size:60%;}
+.jump_aft li:nth-child(2){background: url(../../images/health2020/jumpbtn_04.svg)no-repeat  center center;background-size:60%;} */
+.jump_bef a:first-child li{background: url(../../images/health2020/jumpbtn_03.svg)no-repeat center center;background-size:60%;}
+.jump_bef a:nth-child(2) li{background: url(../../images/health2020/jumpbtn_01.svg)no-repeat  center center;background-size:60%;}
+.jump_aft a:first-child li{background: url(../../images/health2020/jumpbtn_02.svg)no-repeat center center;background-size:60%;}
+.jump_aft a:nth-child(2) li{background: url(../../images/health2020/jumpbtn_04.svg)no-repeat  center center;background-size:60%;}
+.jump_btn li:hover,.jump_btn li.act{color: #fff;background-color: #1e9c96;transition:0.3s;}
+.jump_bef li:first-child:hover{background: url(../../images/health2020/jumpbtn_03-o.svg)no-repeat center center;background-size:60%;background-color: #1e9c96;}
+.jump_bef li:nth-child(2):hover{background: url(../../images/health2020/jumpbtn_01-o.svg)no-repeat  center center;background-size:60%;background-color: #1e9c96;}
+.jump_aft li:first-child:hover{background: url(../../images/health2020/jumpbtn_02-o.svg)no-repeat center center;background-size:60%;background-color: #1e9c96;}
+.jump_aft li:nth-child(2):hover{background: url(../../images/health2020/jumpbtn_04-o.svg)no-repeat  center center;background-size:60%;background-color: #1e9c96;}
+@media (max-width:767px) {
+.jump_btn li,.jump_bef li,.jump_aft li{font-size:14px;margin-bottom:15px;vertical-align:top;width:25px;height:25px;display:inline-block;margin-right:5px;border:1px #1e9c96 solid;padding-top:5px;border-radius:5px;cursor:pointer;color: #1e9c96;transition:0.3s;}
+}
+/*跳頁按鈕ed*/
