@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html>
     <style>
-        div {
+        #div {
             margin: 5px;
-            text-algin: justify;
+            text-align: justify;
         }
         @font-face {
             font-family:宗楷體 ;
-            src: url(宗楷體.ttf)
+            src: url(font/宗楷體.ttf) ;
         }
-        #box1 {
+        @font-face {
+            font-family:竹風體 ;
+            src: url(font/竹風體.ttf) ;
+        }
+        .box1 {
             width:20% ;
             height:150px;;
             float: right;
@@ -18,14 +22,80 @@
             font-family:宗楷體 ;
             border-color: red ;
         }
-    </style>
+        #box2 {
+            width:20% ;
+            height:150px;;
+            float: right;
+            border-style:double;
+            border: width 2px;
+            font-family:秀風體 ;
+            border-color: orange ;
+        }
+        #box3 {
+            width:20% ;
+            height:150px;;
+            float: right;
+            border-style:dashed;
+            border: width 3px;
+            font-family:微軟正黑體 ;
+            border-color: yellow ;
+        }
+        #box4 {
+            width:20% ;
+            height:150px;;
+            float: right;
+            border-style:dotted;
+            border: width 4px;
+            font-family:標楷體 ;
+            border-color: green ;
+        }
+        #box5 {
+            width:20% ;
+            height:150px;;
+            float: left;
+            border-style:solid;
+            border: width 1px;
+            font-family:宗楷體 ;
+            border-color: blue ;
+        }
+        #box6 {
+            width:20% ;
+            height:150px;;
+            float: left;
+            border-style:double;
+            border: width 2px;
+            font-family:秀風體 ;
+            border-color: rgb(83, 83, 122) ;
+        }
+        #box7 {
+            width:20% ;
+            height:150px;;
+            float: left;
+            border-style:dashed;
+            border: width 3px;
+            font-family:微軟正黑體 ;
+            border-color: purple ;
+        }
+        #box8 {
+            width:20% ;
+            height:150px;;
+            float: left;
+            border-style:dotted;
+            border: width 4px;
+            font-family:標楷體 ;
+            border-color: black ;
+        }
+      </style>
 <head>
     <meta charset="UTF-8">
     <title>課堂作業04</title>
 </head>
 <body>
-    <div id="box1">
+    <div class="box1">
         要知道，不論你是感到受傷或興奮，那個感覺都是在你內的，他人或外在的事物不是你的感覺之成因。
+    </div>
+    <div class="box2">
+        不要總是期待好事發生，你的工作就是：無論發生什麼事，都去寬恕。
     </div>
 </body>
 </html>
