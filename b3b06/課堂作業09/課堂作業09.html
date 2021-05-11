@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html Lang="zh">
+<head>
+	<title>課堂作業09</title>
+    <meta charest="utf-8">
+</head>
+<style type="text/css">
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    input {
+        margin-top: 10px;
+    }
+    textarea {
+        margin-top: 15px;
+        width: 60%;
+        align-items: center;
+    }
+    span {
+        color: red;
+    }
+</style>
+<body>
+    <h3 style="color:blue; text-align: center">
+        開啟檔案後，字串搜尋
+    </h3>
+    <div>
+        <input type="file">
+        <textarea cols="20" rows="15"></textarea>
+    </div> 
+    <div id="demo"></div>
+    <form id="form01">
+        輸入字串: <input type="text" name="大同大學學則" value="成績"><br>
+    </form>
+    <script>
+        var x = document.getElementById("form01");
+        let input = document.querySelector('input');
+        let textarea = document.querySelector('textarea');
+        var LineNo = 0;
+        var text="";
+        var reg = /成績/g;
+        var m1;
+        var newString="";
+        function printReg(LineNo, newString){
+            text += "...";
+            for (i =LineNo-15; i<=LineNo + 20;i++){
+                if ((i>=LineNo) && (i<= LineNo + reg.Length -1)){
+                    text += newString[i];
+                } else {
+                    text += newString[i];
+            }
+        }
+        text += "...<br>";
+    }
+    input.addEventListener('change', () => {
+            var files = input.files;
+            if (files.length == 0) return;
+            const file = files[0];
+            let reader = new fileReader();
+            reader.onload = (e) => {
+                const file = e.target.result;
+                const Lines = file.spilt(/\r\n|\n/);
+                textarea.value = Lines.join('\n');
+                newString = newString.substr(reg.LastIndex);
+                while ((m1 = reg.exec(newString)) !== null){
+                    LineNo =newString.search(reg);
+                    text += "<span>「" + m1[0] + "」" + "在第" + newString.search(reg) + "個字</span>";
+                    prinReg(LineNo, newString);
+                    text += "<br>";
+                    newString=newString.substr(reg.LastIndex);
+                }
+                document.getElementById("demo").innerHTML = text;
+            };
+                reader.onerror = (e) => alert(e.target.error.name);
+                reader.readAsText(file);
+        });
+        </script>
+        </body>
+        </html>
