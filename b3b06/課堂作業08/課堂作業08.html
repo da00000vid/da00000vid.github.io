@@ -36,19 +36,19 @@
     </form>
     <script>
         var x = document.getElementById("form01");
-        let input = document.querySelector('input')
+        let input = document.querySelector('input');
         let textarea = document.querySelector('textarea');
         var LineNo = 0;
-        var text=""
+        var text="";
         input.addEventListener('change', () => {
             var files = input.files;
             if (files.length == 0) return;
             const file = files[0];
-            let reader = new filereader();
+            let reader = new fileReader();
             reader.onload = (e) => {
                 const file = e.target.result;
-                const lines = file.spilt(/＼r＼n∣＼n/);
-                textarea.value = lines.join('＼n');
+                const Lines = file.spilt(/\r\n|\n/);
+                textarea.value = Lines.join('\n');
                 var reg = new regExp(x.elements[0].value);
                 LineNo = textarea.value.search(reg);
                 text += "所搜尋的字串:「" + reg + "」出現在第" + LineNo +"個字<br>";
